@@ -1,33 +1,52 @@
 package com.amine.pfemanager.config;
 
+import com.amine.pfemanager.security.JwtAuthFilter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 /**
- * Basic security config for Day 1.
- * Health endpoint is public, everything else requires authentication
- * for now. JWT filter will be added in a later iteration.
+ * Security configuration with JWT authentication.
+ *
+ * Public endpoints: {@code /api/health} and {@code /api/auth/**}
+ * (register/login). Every other request must carry a valid
+ * {@code Authorization: Bearer <token>} header, which {@link JwtAuthFilter}
+ * turns into a Spring Security authentication before these rules are checked.
+ * The API is stateless: no HTTP session is ever created.
  */
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
 
+    private final JwtAuthFilter jwtAuthFilter;
+
+    public SecurityConfig(JwtAuthFilter jwtAuthFilter) {
+        this.jwtAuthFilter = jwtAuthFilter;
+    }
+
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-            .csrf(csrf -> csrf.disable())
-            .sessionManagement(session ->
-                session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-            .authorizeHttpRequests(auth -> auth
-                .requestMatchers("/api/health").permitAll()
-                .anyRequest().authenticated()
-            )
-            .httpBasic(basic -> {});
+                .csrf(csrf -> csrf.disable())
+                .sessionManagement(session ->
+                        session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                .authorizeHttpRequests(auth -> auth
+                        .requestMatchers("/api/health", "/api/auth/**").permitAll()
+                        .anyRequest().authenticated()
+                )
+                .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
+    }
+
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
     }
 }

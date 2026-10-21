@@ -1,34 +1,69 @@
 /**
- * Small fetch helper for the PFE Manager backend API.
- * Base URL comes from NEXT_PUBLIC_API_URL, defaults to localhost:8080.
+ * Small API helper for the Spring Boot backend.
+ * Sends the stored JWT as an Authorization header on every request
+ * (public endpoints simply ignore it).
  */
 
-const API_BASE =
-  process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8080/api";
+import { getToken } from "./token";
+
+const API_BASE_URL =
+  process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8080";
+
+export interface HealthResponse {
+  status: string;
+  service: string;
+  timestamp: string;
+}
+
+function authHeaders(): Record<string, string> {
+  const headers: Record<string, string> = {
+    "Content-Type": "application/json",
+  };
+  const token = getToken();
+  if (token) {
+    headers["Authorization"] = `Bearer ${token}`;
+  }
+  return headers;
+}
 
 export async function apiGet<T>(path: string): Promise<T> {
-  const res = await fetch(`${API_BASE}${path}`, {
-    headers: { "Content-Type": "application/json" },
+  const response = await fetch(`${API_BASE_URL}${path}`, {
+    headers: authHeaders(),
     cache: "no-store",
   });
-  if (!res.ok) {
-    throw new Error(`API GET ${path} failed: ${res.status} ${res.statusText}`);
+
+  if (!response.ok) {
+    throw new Error(`API request failed: ${response.status} ${path}`);
   }
-  return (await res.json()) as T;
+
+  return (await response.json()) as T;
 }
 
 export async function apiPost<T>(path: string, body: unknown): Promise<T> {
-  const res = await fetch(`${API_BASE}${path}`, {
+  const response = await fetch(`${API_BASE_URL}${path}`, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers: authHeaders(),
     body: JSON.stringify(body),
   });
-  if (!res.ok) {
-    throw new Error(`API POST ${path} failed: ${res.status} ${res.statusText}`);
+
+  if (!response.ok) {
+    let detail = "";
+    try {
+      const data = (await response.json()) as { error?: string };
+      if (data.error) {
+        detail = ` — ${data.error}`;
+      }
+    } catch {
+      // ignore: not a JSON error body
+    }
+    throw new Error(`API request failed: ${response.status} ${path}${detail}`);
   }
-  return (await res.json()) as T;
+
+  return (await response.json()) as T;
 }
 
-export async function checkHealth(): Promise<{ status: string; service: string }> {
-  return apiGet("/health");
+export async function checkHealth(): Promise<HealthResponse> {
+  return apiGet<HealthResponse>("/api/health");
 }
+
+export { API_BASE_URL };

@@ -72,7 +72,9 @@ spark-submit spark/skills_stats.py data/sample_applications.csv
 - [x] **Day 1** — Project scaffold: repo structure, Docker Compose with PostgreSQL, Spring Boot app with Health endpoint, JPA entities (`InternshipOffer`, `Application`), Next.js home page, Spark job skeleton
 - [ ] InternshipOffer CRUD API (`/api/offers`)
 - [ ] Application submission API (`/api/applications`)
-- [ ] JWT authentication (students / supervisors / admin roles)
+- [x] JWT authentication (students / supervisors / admin roles)
+  - [x] `User` entity with `ROLE_STUDENT` / `ROLE_SUPERVISOR` / `ROLE_ADMIN`, `AuthController` (`/api/auth/register`, `/api/auth/login`), JWT filter, BCrypt password hashing
+  - [x] `/login` and `/register` pages, token stored in the browser, protected route group with `/dashboard`
 - [ ] Frontend: offers list page connected to API
 - [ ] Frontend: application form
 - [ ] Supervisor assignment workflow
