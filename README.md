@@ -4,6 +4,18 @@ A platform to manage PFE (Projet de Fin d'Études) internship offers, student ap
 
 Students can browse offers, companies/supervisors can publish and track offers, and admins get simple stats (e.g. most requested skills, applications per offer) generated from application data.
 
+## Screenshots
+
+The app running locally, with sample data:
+
+**Internship offers** (`/offers`, login required)
+
+![Internship offers](docs/screenshots/offers.png)
+
+**Dashboard** (`/dashboard`, login required)
+
+![Dashboard](docs/screenshots/dashboard.png)
+
 ## Tech Stack
 
 - **Backend:** Spring Boot 3 (Java 17), Spring Data JPA, Spring Security, PostgreSQL
