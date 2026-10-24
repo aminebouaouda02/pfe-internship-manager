@@ -5,6 +5,10 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { register } from "../../lib/auth";
 
+const inputClasses =
+  "mt-1 block w-full rounded-lg border border-slate-300 px-3 py-2 text-slate-900 shadow-sm transition focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/40";
+const labelClasses = "block text-sm font-medium text-slate-700";
+
 export default function RegisterPage() {
   const router = useRouter();
   const [username, setUsername] = useState("");
@@ -28,50 +32,81 @@ export default function RegisterPage() {
   }
 
   return (
-    <div style={{ maxWidth: "24rem", margin: "3rem auto", padding: "0 1rem" }}>
-      <h1>Create an account</h1>
-      <form onSubmit={handleSubmit} style={{ display: "grid", gap: "0.75rem" }}>
-        <label>
-          Username
-          <input
-            type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            required
-            minLength={3}
-            maxLength={50}
-            style={{ display: "block", width: "100%", padding: "0.5rem" }}
-          />
-        </label>
-        <label>
-          Email
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-            style={{ display: "block", width: "100%", padding: "0.5rem" }}
-          />
-        </label>
-        <label>
-          Password (min 6 characters)
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-            minLength={6}
-            style={{ display: "block", width: "100%", padding: "0.5rem" }}
-          />
-        </label>
-        {error && <p style={{ color: "red" }}>{error}</p>}
-        <button type="submit" disabled={loading} style={{ padding: "0.5rem" }}>
-          {loading ? "Creating account…" : "Register"}
-        </button>
-      </form>
-      <p>
-        Already have an account? <Link href="/login">Login</Link>
-      </p>
+    <div className="mx-auto w-full max-w-md px-4 py-12 sm:py-16">
+      <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-card">
+        <div className="text-center">
+          <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-brand-500 to-accent-600 text-2xl shadow">
+            🎓
+          </span>
+          <h1 className="mt-4 text-2xl font-bold text-slate-900">
+            Create an account
+          </h1>
+          <p className="mt-1 text-sm text-slate-500">
+            Join the platform to browse offers and apply online.
+          </p>
+        </div>
+
+        <form onSubmit={handleSubmit} className="mt-6 grid gap-4">
+          <label className={labelClasses}>
+            Username
+            <input
+              type="text"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              required
+              minLength={3}
+              maxLength={50}
+              className={inputClasses}
+              placeholder="Choose a username"
+            />
+          </label>
+          <label className={labelClasses}>
+            Email
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+              className={inputClasses}
+              placeholder="you@example.com"
+            />
+          </label>
+          <label className={labelClasses}>
+            Password (min 6 characters)
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+              minLength={6}
+              className={inputClasses}
+              placeholder="Choose a password"
+            />
+          </label>
+          {error && (
+            <p className="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
+              {error}
+            </p>
+          )}
+          <button
+            type="submit"
+            disabled={loading}
+            className="w-full rounded-lg bg-brand-600 py-2.5 font-semibold text-white shadow-sm transition hover:bg-brand-700 disabled:cursor-not-allowed disabled:opacity-60"
+          >
+            {loading ? "Creating account…" : "Register"}
+          </button>
+        </form>
+
+        <p className="mt-6 text-center text-sm text-slate-600">
+          Already have an account?{" "}
+          <Link
+            href="/login"
+            className="font-semibold text-brand-700 hover:underline"
+          >
+            Login
+          </Link>
+        </p>
+      </div>
     </div>
   );
 }

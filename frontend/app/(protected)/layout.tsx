@@ -27,7 +27,12 @@ export default function ProtectedLayout({
   }, [router]);
 
   if (!allowed) {
-    return <p style={{ padding: "2rem" }}>Checking your session…</p>;
+    return (
+      <div className="mx-auto max-w-6xl px-4 py-16 text-center text-slate-500 sm:px-6">
+        <div className="mx-auto h-8 w-8 animate-spin rounded-full border-4 border-brand-200 border-t-brand-600" />
+        <p className="mt-4 text-sm">Checking your session…</p>
+      </div>
+    );
   }
 
   return <>{children}</>;

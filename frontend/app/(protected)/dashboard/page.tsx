@@ -1,11 +1,13 @@
 "use client";
 
+import { useEffect, useState } from "react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { apiGet } from "../../../lib/api";
 import { logout } from "../../../lib/auth";
 import { getToken } from "../../../lib/token";
 
 /**
- * Simple protected page: only reachable with a stored JWT.
  * Shows the username carried inside the token payload.
  */
 function usernameFromToken(): string {
@@ -21,28 +23,161 @@ function usernameFromToken(): string {
   }
 }
 
+interface OfferSummary {
+  id: number;
+}
+
+interface ApplicationSummary {
+  id: number;
+  status: string;
+}
+
+interface Stats {
+  offers: number;
+  applications: number;
+  pending: number;
+  accepted: number;
+}
+
 export default function DashboardPage() {
   const router = useRouter();
+  const [stats, setStats] = useState<Stats | null>(null);
+  const [statsError, setStatsError] = useState("");
+
+  useEffect(() => {
+    Promise.all([
+      apiGet<OfferSummary[]>("/api/offers"),
+      apiGet<ApplicationSummary[]>("/api/applications"),
+    ])
+      .then(([offers, applications]) => {
+        setStats({
+          offers: offers.length,
+          applications: applications.length,
+          pending: applications.filter((a) => a.status === "PENDING").length,
+          accepted: applications.filter((a) => a.status === "ACCEPTED")
+            .length,
+        });
+      })
+      .catch((err: Error) => setStatsError(err.message));
+  }, []);
 
   function handleLogout() {
     logout();
     router.push("/login");
   }
 
+  const statCards = [
+    {
+      label: "Total offers",
+      value: stats?.offers,
+      icon: "💼",
+      tile: "bg-brand-50 text-brand-700",
+    },
+    {
+      label: "Total applications",
+      value: stats?.applications,
+      icon: "📝",
+      tile: "bg-accent-50 text-accent-700",
+    },
+    {
+      label: "Pending applications",
+      value: stats?.pending,
+      icon: "⏳",
+      tile: "bg-amber-50 text-amber-700",
+    },
+    {
+      label: "Accepted applications",
+      value: stats?.accepted,
+      icon: "✅",
+      tile: "bg-green-50 text-green-700",
+    },
+  ];
+
   return (
-    <div style={{ maxWidth: "40rem", margin: "2rem auto", padding: "0 1rem" }}>
-      <h1>Dashboard</h1>
-      <p>
-        Signed in as <strong>{usernameFromToken()}</strong>.
-      </p>
-      <p>
-        This page is protected: the route group layout only renders it when a
-        valid JWT is stored in the browser. Offers and application pages will live
-        here too in the next steps.
-      </p>
-      <button onClick={handleLogout} style={{ padding: "0.5rem 1rem" }}>
-        Logout
-      </button>
+    <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6">
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <div>
+          <h1 className="text-3xl font-bold text-slate-900">
+            Welcome back, {usernameFromToken()} 👋
+          </h1>
+          <p className="mt-1 text-sm text-slate-500">
+            Here is what is happening on your PFE internship platform.
+          </p>
+        </div>
+        <button
+          type="button"
+          onClick={handleLogout}
+          className="rounded-lg border border-red-200 bg-red-50 px-4 py-2 text-sm font-semibold text-red-700 transition hover:bg-red-100"
+        >
+          Logout
+        </button>
+      </div>
+
+      {statsError && (
+        <p className="mt-5 rounded-lg border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-800">
+          The statistics could not be loaded ({statsError}). The API may be
+          offline — the quick links below still work.
+        </p>
+      )}
+
+      <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        {statCards.map((card) => (
+          <div
+            key={card.label}
+            className="rounded-2xl border border-slate-200 bg-white p-5 shadow-card"
+          >
+            <span
+              className={`flex h-11 w-11 items-center justify-center rounded-xl text-xl ${card.tile}`}
+            >
+              {card.icon}
+            </span>
+            <p className="mt-4 text-3xl font-bold text-slate-900">
+              {card.value === undefined ? (
+                <span className="inline-block h-8 w-14 animate-pulse rounded bg-slate-200 align-middle" />
+              ) : (
+                card.value
+              )}
+            </p>
+            <p className="mt-1 text-sm text-slate-500">{card.label}</p>
+          </div>
+        ))}
+      </div>
+
+      <h2 className="mt-10 text-xl font-bold text-slate-900">Quick links</h2>
+      <div className="mt-4 grid gap-5 md:grid-cols-2">
+        <Link
+          href="/offers"
+          className="group rounded-2xl border border-slate-200 bg-white p-6 shadow-card transition hover:border-brand-300 hover:shadow-md"
+        >
+          <p className="text-2xl">💼</p>
+          <h3 className="mt-3 text-lg font-semibold text-slate-900">
+            Internship offers
+          </h3>
+          <p className="mt-1 text-sm leading-relaxed text-slate-600">
+            Browse the published offers, publish a new one, edit or delete
+            existing offers, and apply to the ones you like.
+          </p>
+          <span className="mt-4 inline-block text-sm font-semibold text-brand-700 group-hover:underline">
+            Go to offers →
+          </span>
+        </Link>
+        <Link
+          href="/applications"
+          className="group rounded-2xl border border-slate-200 bg-white p-6 shadow-card transition hover:border-brand-300 hover:shadow-md"
+        >
+          <p className="text-2xl">📥</p>
+          <h3 className="mt-3 text-lg font-semibold text-slate-900">
+            Applications
+          </h3>
+          <p className="mt-1 text-sm leading-relaxed text-slate-600">
+            Review the applications students have sent, change their status
+            and follow who was accepted.
+          </p>
+          <span className="mt-4 inline-block text-sm font-semibold text-brand-700 group-hover:underline">
+            Go to applications →
+          </span>
+        </Link>
+      </div>
     </div>
   );
 }
