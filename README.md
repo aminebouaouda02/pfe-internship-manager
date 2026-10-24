@@ -8,9 +8,17 @@ Students can browse offers, companies/supervisors can publish and track offers, 
 
 The app running locally, with sample data:
 
+**Home page** (`/`)
+
+![Home page](docs/screenshots/home.png)
+
 **Internship offers** (`/offers`, login required)
 
 ![Internship offers](docs/screenshots/offers.png)
+
+**Applications** (`/applications`, login required)
+
+![Applications](docs/screenshots/applications.png)
 
 **Dashboard** (`/dashboard`, login required)
 
