@@ -99,6 +99,7 @@ spark-submit spark/skills_stats.py data/sample_applications.csv
   - [x] `/login` and `/register` pages, token stored in the browser, protected route group with `/dashboard`
 - [x] Frontend: offers list page connected to API
   - [x] `/offers` page under the protected route group, linked from `/dashboard`
+- [x] Frontend detail pages — offer detail view with edit form and its applications, application detail view with status change; both show loading and error states, and list pages link to the detail pages
 - [ ] Frontend: application form
 - [ ] Supervisor assignment workflow
 - [ ] Spark stats: run on real exported data and expose results via API
