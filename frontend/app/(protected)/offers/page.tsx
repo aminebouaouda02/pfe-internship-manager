@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
+import Link from "next/link";
 import { apiDelete, apiGet, apiPost, apiPut } from "../../../lib/api";
 
 /** Internship offer shape as returned by GET /api/offers. */
@@ -590,7 +591,12 @@ export default function OffersPage() {
                 className="flex flex-col rounded-2xl border border-slate-200 bg-white p-5 shadow-card transition hover:shadow-md"
               >
                 <h2 className="text-lg font-semibold leading-snug text-slate-900">
-                  {offer.title}
+                  <Link
+                    href={`/offers/${offer.id}`}
+                    className="hover:text-brand-700 hover:underline"
+                  >
+                    {offer.title}
+                  </Link>
                 </h2>
                 <p className="mt-1 font-medium text-brand-700">
                   {offer.company}

@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
+import Link from "next/link";
 import { apiDelete, apiGet, apiPut } from "../../../lib/api";
 
 /** Offer object nested inside an application, as returned by the backend. */
@@ -234,7 +235,12 @@ export default function ApplicationsPage() {
                   >
                     <td className="px-5 py-4">
                       <p className="font-semibold text-slate-900">
-                        {application.studentName}
+                        <Link
+                          href={`/applications/${application.id}`}
+                          className="text-brand-700 hover:underline"
+                        >
+                          {application.studentName}
+                        </Link>
                       </p>
                       <p className="text-slate-500">
                         {application.studentEmail}
