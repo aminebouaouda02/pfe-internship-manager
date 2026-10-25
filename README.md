@@ -102,7 +102,7 @@ spark-submit spark/skills_stats.py data/sample_applications.csv
 - [x] Frontend detail pages — offer detail view with edit form and its applications, application detail view with status change; both show loading and error states, and list pages link to the detail pages
 - [ ] Frontend: application form
 - [ ] Supervisor assignment workflow
-- [ ] Spark stats: run on real exported data and expose results via API
+- [x] Spark stats: applications per skill on a generated 600-row sample, result JSON served by `GET /api/analytics/skills`
 - [ ] Dashboard page with charts
 - [ ] Tests (backend unit tests, frontend lint/build in CI)
 - [ ] Deployment guide

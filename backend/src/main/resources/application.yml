@@ -24,6 +24,11 @@ app:
     # Must be at least 32 characters (256 bits) for HS256.
     secret: ${JWT_SECRET:dev-only-secret-key-change-me-in-production-0123456789}
     expiration-ms: ${JWT_EXPIRATION_MS:86400000}
+  analytics:
+    # Folder the Spark job writes its result JSON into; the
+    # /api/analytics/skills endpoint reads the file from here.
+    # Relative to the backend working directory when run locally.
+    results-dir: ${ANALYTICS_RESULTS_DIR:../big-data/output}
 
 logging:
   level:

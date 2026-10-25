@@ -1,0 +1,54 @@
+{
+  "metric": "applications_per_skill",
+  "rows": [
+    {
+      "skill": "Next.js",
+      "count": 160
+    },
+    {
+      "skill": "Kafka",
+      "count": 159
+    },
+    {
+      "skill": "PostgreSQL",
+      "count": 156
+    },
+    {
+      "skill": "SQL",
+      "count": 156
+    },
+    {
+      "skill": "Docker",
+      "count": 154
+    },
+    {
+      "skill": "Spring Boot",
+      "count": 154
+    },
+    {
+      "skill": "TypeScript",
+      "count": 151
+    },
+    {
+      "skill": "Python",
+      "count": 149
+    },
+    {
+      "skill": "Apache Spark",
+      "count": 145
+    },
+    {
+      "skill": "Hadoop",
+      "count": 145
+    },
+    {
+      "skill": "React",
+      "count": 145
+    },
+    {
+      "skill": "Java",
+      "count": 143
+    }
+  ],
+  "total_skill_mentions": 1817
+}

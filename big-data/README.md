@@ -54,10 +54,31 @@ python spark/skills_stats.py data/sample_applications.csv
 
 Exact order may vary for equal counts.
 
+## Working analytics job (600-row sample)
+
+```bash
+# 1. Generate the larger sample (deterministic, 600 rows)
+python spark/generate_sample_applications.py
+# 2. Run the Spark job and write the result JSON
+spark-submit spark/skills_stats.py data/applications_large.csv \
+    output/applications_per_skill.json
+```
+
+The result JSON has one row per skill (`skill`, `count`) plus the total
+number of skill mentions. The backend serves that file at
+`GET /api/analytics/skills` (see
+`backend/src/main/java/com/amine/pfemanager/controller/AnalyticsController.java`;
+it returns 404 with a clear message if the job has never been run).
+
+Note: the committed `output/applications_per_skill.json` was computed from
+the 600-row sample with the same aggregation as the Spark job, because
+this workspace has no Spark/Java runtime to run the job itself. Re-running
+the Spark command above replaces it with a real Spark result.
+
 ## Roadmap
 
 - [x] Day 1: job skeleton + sample data
+- [x] Working job: 600-row generated sample, result JSON, backend endpoint
 - [ ] Read directly from PostgreSQL via JDBC
-- [ ] Write results to CSV / JSON for the backend to serve
 - [ ] Add offers-side stats: most requested skills in offers
 - [ ] Run on Hadoop / HDFS in Docker
