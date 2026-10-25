@@ -1,0 +1,601 @@
+application_id,student_name,student_email,offer_id,skills,status,applied_at
+1,Youssef El Amrani,youssef.amrani@example.com,1,"SQL,Apache Spark,Docker,Python",REJECTED,2026-01-24
+2,Youssef Fassi,youssef.fassi@example.com,2,"Java,Kafka,Spring Boot",REJECTED,2026-01-07
+3,Nour El Amrani,nour.amrani@example.com,4,"Apache Spark,Docker,React,TypeScript",REJECTED,2026-01-08
+4,Omar El Amrani,omar.amrani@example.com,3,"Kafka,TypeScript",PENDING,2026-01-11
+5,Lina Idrissi,lina.idrissi@example.com,3,"Spring Boot,TypeScript",PENDING,2026-01-04
+6,Nour Cherif,nour.cherif@example.com,1,"Kafka,Next.js",ACCEPTED,2026-01-18
+7,Youssef Rami,youssef.rami@example.com,2,"Docker,Hadoop,PostgreSQL",PENDING,2026-01-19
+8,Sara Haddad,sara.haddad@example.com,3,"Spring Boot,Apache Spark,Kafka",ACCEPTED,2026-01-13
+9,Hiba Bouaouda,hiba.bouaouda@example.com,1,"PostgreSQL,Apache Spark,SQL",REJECTED,2026-01-23
+10,Amine Rami,amine.rami@example.com,5,"Apache Spark,Python,Next.js,TypeScript",PENDING,2026-01-09
+11,Hiba El Amrani,hiba.amrani@example.com,3,"Java,PostgreSQL",PENDING,2026-01-13
+12,Lina Fassi,lina.fassi@example.com,4,"PostgreSQL,Apache Spark,Next.js,TypeScript",PENDING,2026-01-21
+13,Omar Bouaouda,omar.bouaouda@example.com,3,"Kafka,React",REJECTED,2026-01-18
+14,Mehdi Fassi,mehdi.fassi@example.com,4,"PostgreSQL,Apache Spark,Python",PENDING,2026-01-17
+15,Sara Ben Ali,sara.ali@example.com,4,"Docker,Python",REJECTED,2026-01-26
+16,Youssef Tazi,youssef.tazi@example.com,5,"Hadoop,Next.js,React",PENDING,2026-01-09
+17,Youssef Rami,youssef.rami@example.com,4,"Docker,PostgreSQL,Spring Boot",PENDING,2026-01-10
+18,Salma El Amrani,salma.amrani@example.com,1,"Kafka,SQL,React,Python",PENDING,2026-01-17
+19,Anas Fassi,anas.fassi@example.com,2,"Python,PostgreSQL",REJECTED,2026-01-25
+20,Anas El Amrani,anas.amrani@example.com,3,"PostgreSQL,Next.js,Java,Spring Boot",PENDING,2026-01-12
+21,Sara Haddad,sara.haddad@example.com,5,"Spring Boot,Kafka,Next.js,Docker",PENDING,2026-01-25
+22,Amine Alaoui,amine.alaoui@example.com,5,"Python,SQL,React,TypeScript",PENDING,2026-01-07
+23,Omar Tazi,omar.tazi@example.com,1,"Docker,PostgreSQL,Next.js,React",PENDING,2026-01-15
+24,Lina Ben Ali,lina.ali@example.com,5,"Java,Hadoop,React",PENDING,2026-01-08
+25,Sara Ben Ali,sara.ali@example.com,3,"Docker,Java,Apache Spark,Spring Boot",PENDING,2026-01-02
+26,Anas Haddad,anas.haddad@example.com,2,"Docker,Next.js,Apache Spark",REJECTED,2026-01-18
+27,Nour Alaoui,nour.alaoui@example.com,1,"Next.js,TypeScript",PENDING,2026-01-07
+28,Mehdi Idrissi,mehdi.idrissi@example.com,1,"TypeScript,Next.js,Java",PENDING,2026-01-22
+29,Mehdi Idrissi,mehdi.idrissi@example.com,5,"Apache Spark,Kafka",ACCEPTED,2026-01-07
+30,Amine Tazi,amine.tazi@example.com,1,"SQL,Next.js",ACCEPTED,2026-01-08
+31,Anas Ben Ali,anas.ali@example.com,1,"Docker,React",PENDING,2026-01-27
+32,Lina Bouaouda,lina.bouaouda@example.com,4,"Next.js,Kafka,Apache Spark",PENDING,2026-01-28
+33,Amine Tazi,amine.tazi@example.com,4,"TypeScript,SQL",PENDING,2026-01-26
+34,Mehdi Rami,mehdi.rami@example.com,2,"Kafka,Next.js,Python,Apache Spark",PENDING,2026-01-10
+35,Nour Rami,nour.rami@example.com,1,"Kafka,PostgreSQL",REJECTED,2026-01-02
+36,Salma Rami,salma.rami@example.com,2,"Python,Java,React,Spring Boot",PENDING,2026-01-28
+37,Nour Ben Ali,nour.ali@example.com,5,"Apache Spark,TypeScript,Spring Boot,Kafka",PENDING,2026-01-19
+38,Nour Ben Ali,nour.ali@example.com,3,"Docker,Hadoop,Kafka",PENDING,2026-01-17
+39,Lina Idrissi,lina.idrissi@example.com,3,"SQL,TypeScript",ACCEPTED,2026-01-05
+40,Hiba Ben Ali,hiba.ali@example.com,1,"Next.js,Hadoop",PENDING,2026-01-19
+41,Anas Haddad,anas.haddad@example.com,3,"SQL,Python,PostgreSQL,Spring Boot",PENDING,2026-01-08
+42,Amine Alaoui,amine.alaoui@example.com,5,"Kafka,SQL,Hadoop,React",PENDING,2026-01-01
+43,Youssef Bouaouda,youssef.bouaouda@example.com,3,"Spring Boot,Kafka,React",PENDING,2026-01-05
+44,Nour Haddad,nour.haddad@example.com,3,"PostgreSQL,Apache Spark,SQL,React",PENDING,2026-01-16
+45,Youssef Tazi,youssef.tazi@example.com,2,"Java,Kafka,PostgreSQL",PENDING,2026-01-25
+46,Amine Alaoui,amine.alaoui@example.com,1,"Kafka,TypeScript,React,Java",PENDING,2026-01-04
+47,Anas El Amrani,anas.amrani@example.com,2,"Hadoop,React,Python",PENDING,2026-01-14
+48,Omar Idrissi,omar.idrissi@example.com,2,"PostgreSQL,Apache Spark",PENDING,2026-01-22
+49,Hiba Rami,hiba.rami@example.com,2,"Hadoop,Python,Apache Spark",PENDING,2026-01-28
+50,Mehdi El Amrani,mehdi.amrani@example.com,4,"Kafka,PostgreSQL",PENDING,2026-01-26
+51,Omar Bouaouda,omar.bouaouda@example.com,2,"Spring Boot,TypeScript,Java,Next.js",ACCEPTED,2026-01-08
+52,Hiba Cherif,hiba.cherif@example.com,2,"Apache Spark,Java",ACCEPTED,2026-01-22
+53,Hiba Cherif,hiba.cherif@example.com,5,"SQL,PostgreSQL",ACCEPTED,2026-01-21
+54,Anas Idrissi,anas.idrissi@example.com,5,"Spring Boot,SQL",PENDING,2026-01-06
+55,Sara Ben Ali,sara.ali@example.com,5,"TypeScript,PostgreSQL,Docker,Kafka",PENDING,2026-01-20
+56,Mehdi Fassi,mehdi.fassi@example.com,4,"SQL,Java",PENDING,2026-01-23
+57,Anas Rami,anas.rami@example.com,1,"Kafka,Docker,Apache Spark,PostgreSQL",PENDING,2026-01-14
+58,Nour Idrissi,nour.idrissi@example.com,4,"Spring Boot,SQL,React,Docker",PENDING,2026-01-22
+59,Mehdi Cherif,mehdi.cherif@example.com,2,"Python,Apache Spark,TypeScript,Hadoop",REJECTED,2026-01-22
+60,Nour Cherif,nour.cherif@example.com,2,"React,Java,SQL",ACCEPTED,2026-01-10
+61,Nour Fassi,nour.fassi@example.com,2,"PostgreSQL,Next.js,Docker,Hadoop",REJECTED,2026-01-22
+62,Salma Bouaouda,salma.bouaouda@example.com,2,"Spring Boot,SQL,React,PostgreSQL",PENDING,2026-01-03
+63,Lina Haddad,lina.haddad@example.com,4,"Java,Kafka",REJECTED,2026-01-08
+64,Youssef Alaoui,youssef.alaoui@example.com,4,"Docker,Hadoop,Apache Spark",ACCEPTED,2026-01-23
+65,Mehdi Haddad,mehdi.haddad@example.com,1,"Docker,Java",ACCEPTED,2026-01-25
+66,Lina Bouaouda,lina.bouaouda@example.com,1,"React,Next.js,Java,Kafka",ACCEPTED,2026-01-08
+67,Amine Alaoui,amine.alaoui@example.com,4,"React,Kafka,Hadoop,PostgreSQL",REJECTED,2026-01-25
+68,Anas Tazi,anas.tazi@example.com,2,"Next.js,Python,Kafka,Hadoop",PENDING,2026-01-09
+69,Anas Alaoui,anas.alaoui@example.com,3,"Apache Spark,SQL,Next.js,Spring Boot",PENDING,2026-01-23
+70,Omar Idrissi,omar.idrissi@example.com,2,"React,Spring Boot,Python",ACCEPTED,2026-01-05
+71,Amine Haddad,amine.haddad@example.com,5,"TypeScript,Kafka",ACCEPTED,2026-01-11
+72,Mehdi El Amrani,mehdi.amrani@example.com,5,"TypeScript,Kafka",PENDING,2026-01-25
+73,Nour Tazi,nour.tazi@example.com,4,"Java,PostgreSQL,SQL",ACCEPTED,2026-01-25
+74,Anas Rami,anas.rami@example.com,4,"Apache Spark,Next.js,Kafka,SQL",PENDING,2026-01-14
+75,Mehdi Idrissi,mehdi.idrissi@example.com,5,"Docker,TypeScript,Python,Next.js",REJECTED,2026-01-05
+76,Sara Tazi,sara.tazi@example.com,4,"Hadoop,Docker,Java,Spring Boot",PENDING,2026-01-21
+77,Salma Bouaouda,salma.bouaouda@example.com,2,"SQL,TypeScript",ACCEPTED,2026-01-11
+78,Hiba Idrissi,hiba.idrissi@example.com,1,"SQL,TypeScript,Kafka",ACCEPTED,2026-01-27
+79,Sara Rami,sara.rami@example.com,1,"PostgreSQL,Apache Spark",PENDING,2026-01-21
+80,Sara Haddad,sara.haddad@example.com,2,"Java,Hadoop",PENDING,2026-01-05
+81,Salma Ben Ali,salma.ali@example.com,5,"Apache Spark,Next.js,SQL,PostgreSQL",REJECTED,2026-01-06
+82,Youssef Bouaouda,youssef.bouaouda@example.com,5,"Spring Boot,Hadoop,Java",ACCEPTED,2026-01-10
+83,Mehdi Haddad,mehdi.haddad@example.com,1,"Hadoop,Docker",PENDING,2026-01-08
+84,Nour Ben Ali,nour.ali@example.com,3,"Java,PostgreSQL,React,TypeScript",PENDING,2026-01-22
+85,Anas Idrissi,anas.idrissi@example.com,4,"TypeScript,Next.js",PENDING,2026-01-04
+86,Salma Bouaouda,salma.bouaouda@example.com,5,"Python,React,SQL",ACCEPTED,2026-01-20
+87,Salma Tazi,salma.tazi@example.com,1,"Hadoop,SQL,PostgreSQL,Apache Spark",PENDING,2026-01-27
+88,Salma Haddad,salma.haddad@example.com,1,"Hadoop,Kafka,TypeScript",ACCEPTED,2026-01-11
+89,Hiba Bouaouda,hiba.bouaouda@example.com,3,"Apache Spark,PostgreSQL,SQL",REJECTED,2026-01-11
+90,Omar Rami,omar.rami@example.com,2,"React,Apache Spark",ACCEPTED,2026-01-03
+91,Salma Rami,salma.rami@example.com,4,"Kafka,Next.js",ACCEPTED,2026-01-21
+92,Sara Ben Ali,sara.ali@example.com,5,"Apache Spark,TypeScript,Kafka",PENDING,2026-01-10
+93,Salma Rami,salma.rami@example.com,4,"PostgreSQL,TypeScript,React,Kafka",PENDING,2026-01-12
+94,Omar Cherif,omar.cherif@example.com,1,"Spring Boot,Apache Spark",REJECTED,2026-01-11
+95,Amine Haddad,amine.haddad@example.com,5,"Kafka,Next.js",REJECTED,2026-01-09
+96,Nour Cherif,nour.cherif@example.com,3,"Apache Spark,SQL",PENDING,2026-01-08
+97,Omar El Amrani,omar.amrani@example.com,5,"React,Python,SQL,Java",PENDING,2026-01-02
+98,Amine Alaoui,amine.alaoui@example.com,4,"Java,Hadoop",ACCEPTED,2026-01-10
+99,Salma Idrissi,salma.idrissi@example.com,4,"Java,SQL",PENDING,2026-01-28
+100,Youssef Tazi,youssef.tazi@example.com,2,"Spring Boot,Hadoop,Java",REJECTED,2026-01-05
+101,Omar Ben Ali,omar.ali@example.com,4,"Spring Boot,React",REJECTED,2026-01-25
+102,Nour Fassi,nour.fassi@example.com,4,"React,TypeScript",PENDING,2026-01-15
+103,Nour Tazi,nour.tazi@example.com,1,"Hadoop,Kafka,Java",PENDING,2026-01-20
+104,Lina Cherif,lina.cherif@example.com,1,"Spring Boot,Python,Apache Spark,Docker",PENDING,2026-01-18
+105,Sara Tazi,sara.tazi@example.com,1,"Kafka,Hadoop,Next.js",PENDING,2026-01-10
+106,Omar Cherif,omar.cherif@example.com,5,"Next.js,Spring Boot,Apache Spark,SQL",PENDING,2026-01-26
+107,Mehdi Ben Ali,mehdi.ali@example.com,2,"Apache Spark,Docker,Python,SQL",PENDING,2026-01-27
+108,Sara Bouaouda,sara.bouaouda@example.com,1,"Hadoop,Kafka,SQL",ACCEPTED,2026-01-15
+109,Omar Tazi,omar.tazi@example.com,1,"React,Kafka,Next.js",REJECTED,2026-01-15
+110,Sara Tazi,sara.tazi@example.com,2,"PostgreSQL,Hadoop,SQL,Java",REJECTED,2026-01-03
+111,Nour El Amrani,nour.amrani@example.com,5,"SQL,Hadoop,Java,Python",ACCEPTED,2026-01-16
+112,Omar Bouaouda,omar.bouaouda@example.com,3,"TypeScript,Docker,Next.js,Spring Boot",ACCEPTED,2026-01-16
+113,Hiba Idrissi,hiba.idrissi@example.com,4,"Spring Boot,Python,PostgreSQL,TypeScript",PENDING,2026-01-23
+114,Mehdi Rami,mehdi.rami@example.com,3,"Next.js,Spring Boot",PENDING,2026-01-11
+115,Youssef Tazi,youssef.tazi@example.com,1,"Java,Docker,React,Next.js",PENDING,2026-01-14
+116,Anas Idrissi,anas.idrissi@example.com,3,"Next.js,Docker,Kafka,Java",REJECTED,2026-01-07
+117,Amine Cherif,amine.cherif@example.com,5,"Kafka,Next.js,Spring Boot",PENDING,2026-01-01
+118,Amine Cherif,amine.cherif@example.com,1,"Java,React,TypeScript,Spring Boot",ACCEPTED,2026-01-08
+119,Youssef Bouaouda,youssef.bouaouda@example.com,3,"Kafka,SQL,React",ACCEPTED,2026-01-23
+120,Salma Alaoui,salma.alaoui@example.com,4,"Next.js,React",PENDING,2026-01-05
+121,Nour Rami,nour.rami@example.com,5,"Python,Spring Boot,SQL,TypeScript",PENDING,2026-01-11
+122,Sara Cherif,sara.cherif@example.com,2,"SQL,Hadoop,Docker,Next.js",ACCEPTED,2026-01-28
+123,Anas Alaoui,anas.alaoui@example.com,4,"PostgreSQL,React,Docker",PENDING,2026-01-13
+124,Lina Haddad,lina.haddad@example.com,4,"TypeScript,Apache Spark,Kafka,Java",ACCEPTED,2026-01-11
+125,Mehdi Bouaouda,mehdi.bouaouda@example.com,3,"Java,Python,React",PENDING,2026-01-19
+126,Salma Ben Ali,salma.ali@example.com,2,"Next.js,Java,Python,TypeScript",PENDING,2026-01-28
+127,Salma Cherif,salma.cherif@example.com,3,"Hadoop,TypeScript,Spring Boot",REJECTED,2026-01-28
+128,Mehdi Idrissi,mehdi.idrissi@example.com,1,"Kafka,Next.js,React,Java",PENDING,2026-01-20
+129,Omar Haddad,omar.haddad@example.com,2,"Spring Boot,TypeScript,Kafka,Hadoop",PENDING,2026-01-15
+130,Sara El Amrani,sara.amrani@example.com,4,"Java,SQL,PostgreSQL",PENDING,2026-01-12
+131,Lina Rami,lina.rami@example.com,2,"Hadoop,Docker,Python",PENDING,2026-01-06
+132,Nour Tazi,nour.tazi@example.com,4,"Docker,Apache Spark,Next.js,Python",PENDING,2026-01-08
+133,Salma Cherif,salma.cherif@example.com,1,"Java,Next.js,SQL,React",ACCEPTED,2026-01-06
+134,Hiba Fassi,hiba.fassi@example.com,3,"Docker,TypeScript,SQL",PENDING,2026-01-15
+135,Mehdi Alaoui,mehdi.alaoui@example.com,3,"Apache Spark,TypeScript",REJECTED,2026-01-19
+136,Omar Cherif,omar.cherif@example.com,1,"Docker,TypeScript",REJECTED,2026-01-09
+137,Sara Fassi,sara.fassi@example.com,2,"Next.js,SQL,Apache Spark,PostgreSQL",REJECTED,2026-01-08
+138,Omar Bouaouda,omar.bouaouda@example.com,4,"Spring Boot,Docker,Java,SQL",PENDING,2026-01-26
+139,Nour Idrissi,nour.idrissi@example.com,4,"Python,Spring Boot,SQL,PostgreSQL",PENDING,2026-01-24
+140,Lina Bouaouda,lina.bouaouda@example.com,2,"PostgreSQL,React,Docker,SQL",PENDING,2026-01-27
+141,Salma Cherif,salma.cherif@example.com,2,"PostgreSQL,Spring Boot,Next.js,Docker",ACCEPTED,2026-01-05
+142,Anas Idrissi,anas.idrissi@example.com,5,"TypeScript,Java",PENDING,2026-01-09
+143,Salma Idrissi,salma.idrissi@example.com,3,"Kafka,Docker,SQL,TypeScript",PENDING,2026-01-27
+144,Lina Alaoui,lina.alaoui@example.com,5,"Hadoop,React",PENDING,2026-01-11
+145,Youssef Alaoui,youssef.alaoui@example.com,1,"SQL,Docker,TypeScript,Spring Boot",PENDING,2026-01-05
+146,Omar Alaoui,omar.alaoui@example.com,2,"Spring Boot,Apache Spark",ACCEPTED,2026-01-18
+147,Salma Idrissi,salma.idrissi@example.com,1,"Kafka,React,TypeScript,Python",ACCEPTED,2026-01-14
+148,Nour Tazi,nour.tazi@example.com,4,"Java,PostgreSQL,Apache Spark",PENDING,2026-01-15
+149,Hiba Ben Ali,hiba.ali@example.com,3,"PostgreSQL,React,Kafka,Java",PENDING,2026-01-13
+150,Youssef Alaoui,youssef.alaoui@example.com,5,"Docker,Apache Spark",PENDING,2026-01-21
+151,Sara Idrissi,sara.idrissi@example.com,1,"Python,Hadoop",REJECTED,2026-01-07
+152,Lina Fassi,lina.fassi@example.com,2,"Apache Spark,PostgreSQL",REJECTED,2026-01-25
+153,Sara Cherif,sara.cherif@example.com,2,"Python,React",PENDING,2026-01-09
+154,Sara Bouaouda,sara.bouaouda@example.com,3,"PostgreSQL,Apache Spark",PENDING,2026-01-19
+155,Amine Cherif,amine.cherif@example.com,1,"Python,TypeScript",PENDING,2026-01-17
+156,Salma Alaoui,salma.alaoui@example.com,5,"React,Hadoop,Spring Boot",PENDING,2026-01-15
+157,Nour El Amrani,nour.amrani@example.com,1,"Docker,React,SQL,Next.js",PENDING,2026-01-21
+158,Salma Tazi,salma.tazi@example.com,4,"Docker,Spring Boot,Next.js",PENDING,2026-01-23
+159,Youssef Idrissi,youssef.idrissi@example.com,5,"Python,Spring Boot,Kafka,SQL",REJECTED,2026-01-20
+160,Hiba Tazi,hiba.tazi@example.com,4,"React,SQL,Next.js,Kafka",PENDING,2026-01-20
+161,Youssef Rami,youssef.rami@example.com,3,"Apache Spark,TypeScript,Next.js,Kafka",ACCEPTED,2026-01-14
+162,Mehdi Tazi,mehdi.tazi@example.com,3,"Spring Boot,PostgreSQL,TypeScript,Docker",PENDING,2026-01-22
+163,Amine Alaoui,amine.alaoui@example.com,4,"Spring Boot,Kafka",PENDING,2026-01-03
+164,Hiba Bouaouda,hiba.bouaouda@example.com,1,"Java,Hadoop,React,Docker",ACCEPTED,2026-01-11
+165,Hiba Tazi,hiba.tazi@example.com,1,"Java,SQL,Hadoop,Docker",REJECTED,2026-01-12
+166,Anas Haddad,anas.haddad@example.com,1,"Docker,Next.js",PENDING,2026-01-08
+167,Anas Idrissi,anas.idrissi@example.com,4,"SQL,Hadoop",REJECTED,2026-01-08
+168,Nour Fassi,nour.fassi@example.com,2,"Docker,React,Java,SQL",PENDING,2026-01-01
+169,Omar Idrissi,omar.idrissi@example.com,4,"Java,Python,Docker",PENDING,2026-01-19
+170,Amine El Amrani,amine.amrani@example.com,4,"Kafka,React",ACCEPTED,2026-01-07
+171,Salma Idrissi,salma.idrissi@example.com,3,"PostgreSQL,SQL",REJECTED,2026-01-24
+172,Nour Ben Ali,nour.ali@example.com,5,"Python,Kafka",PENDING,2026-01-25
+173,Youssef Cherif,youssef.cherif@example.com,4,"Docker,TypeScript,Next.js",ACCEPTED,2026-01-20
+174,Omar Haddad,omar.haddad@example.com,5,"Spring Boot,PostgreSQL,TypeScript,Kafka",ACCEPTED,2026-01-10
+175,Anas Cherif,anas.cherif@example.com,1,"Apache Spark,TypeScript",PENDING,2026-01-20
+176,Lina Cherif,lina.cherif@example.com,3,"Python,SQL",PENDING,2026-01-10
+177,Sara Alaoui,sara.alaoui@example.com,2,"TypeScript,Python,Docker,Kafka",REJECTED,2026-01-18
+178,Anas Idrissi,anas.idrissi@example.com,1,"TypeScript,Java",ACCEPTED,2026-01-14
+179,Youssef Idrissi,youssef.idrissi@example.com,1,"TypeScript,Hadoop,Kafka,Docker",ACCEPTED,2026-01-10
+180,Sara Idrissi,sara.idrissi@example.com,3,"Hadoop,Next.js",PENDING,2026-01-27
+181,Mehdi Ben Ali,mehdi.ali@example.com,5,"TypeScript,Hadoop",PENDING,2026-01-13
+182,Mehdi Cherif,mehdi.cherif@example.com,5,"PostgreSQL,Apache Spark,Kafka,Python",PENDING,2026-01-03
+183,Anas Rami,anas.rami@example.com,2,"PostgreSQL,Kafka",PENDING,2026-01-24
+184,Youssef Bouaouda,youssef.bouaouda@example.com,1,"Apache Spark,Python,Hadoop",PENDING,2026-01-05
+185,Salma Alaoui,salma.alaoui@example.com,3,"Hadoop,Next.js,Kafka,PostgreSQL",PENDING,2026-01-28
+186,Salma Ben Ali,salma.ali@example.com,3,"Next.js,Docker,SQL",REJECTED,2026-01-26
+187,Sara Idrissi,sara.idrissi@example.com,1,"Spring Boot,SQL,Next.js,Hadoop",PENDING,2026-01-02
+188,Omar Ben Ali,omar.ali@example.com,4,"Spring Boot,Hadoop,Docker,React",REJECTED,2026-01-13
+189,Anas El Amrani,anas.amrani@example.com,5,"Hadoop,Docker,Apache Spark",ACCEPTED,2026-01-11
+190,Anas Bouaouda,anas.bouaouda@example.com,3,"Next.js,Spring Boot",PENDING,2026-01-26
+191,Anas Bouaouda,anas.bouaouda@example.com,5,"Apache Spark,Next.js",REJECTED,2026-01-15
+192,Nour Bouaouda,nour.bouaouda@example.com,3,"PostgreSQL,SQL,TypeScript",REJECTED,2026-01-14
+193,Sara Idrissi,sara.idrissi@example.com,4,"PostgreSQL,Spring Boot",PENDING,2026-01-18
+194,Omar Fassi,omar.fassi@example.com,2,"PostgreSQL,Spring Boot",PENDING,2026-01-19
+195,Omar Tazi,omar.tazi@example.com,5,"Hadoop,Spring Boot",ACCEPTED,2026-01-10
+196,Hiba Bouaouda,hiba.bouaouda@example.com,4,"Kafka,Docker,React,Spring Boot",REJECTED,2026-01-21
+197,Hiba El Amrani,hiba.amrani@example.com,4,"SQL,Python,Apache Spark",PENDING,2026-01-11
+198,Lina Bouaouda,lina.bouaouda@example.com,1,"Spring Boot,SQL",REJECTED,2026-01-28
+199,Anas Rami,anas.rami@example.com,5,"Docker,PostgreSQL",PENDING,2026-01-25
+200,Nour Tazi,nour.tazi@example.com,5,"Python,Kafka",PENDING,2026-01-27
+201,Salma El Amrani,salma.amrani@example.com,5,"PostgreSQL,Docker,Apache Spark",PENDING,2026-01-15
+202,Salma Haddad,salma.haddad@example.com,5,"Apache Spark,SQL,Next.js,Kafka",ACCEPTED,2026-01-12
+203,Salma Cherif,salma.cherif@example.com,2,"React,Kafka,TypeScript",REJECTED,2026-01-06
+204,Amine Cherif,amine.cherif@example.com,3,"Docker,Next.js",REJECTED,2026-01-28
+205,Youssef Rami,youssef.rami@example.com,2,"SQL,Spring Boot",PENDING,2026-01-25
+206,Salma Rami,salma.rami@example.com,4,"TypeScript,Spring Boot",PENDING,2026-01-08
+207,Sara Tazi,sara.tazi@example.com,2,"TypeScript,React",ACCEPTED,2026-01-12
+208,Youssef Idrissi,youssef.idrissi@example.com,3,"Java,PostgreSQL",PENDING,2026-01-04
+209,Amine El Amrani,amine.amrani@example.com,5,"Next.js,Python,Kafka",PENDING,2026-01-15
+210,Youssef El Amrani,youssef.amrani@example.com,5,"Apache Spark,Python,React",REJECTED,2026-01-24
+211,Mehdi Ben Ali,mehdi.ali@example.com,2,"Apache Spark,SQL,Spring Boot",ACCEPTED,2026-01-02
+212,Nour Alaoui,nour.alaoui@example.com,5,"Spring Boot,Next.js",PENDING,2026-01-20
+213,Anas Fassi,anas.fassi@example.com,4,"Kafka,Python",PENDING,2026-01-10
+214,Nour Idrissi,nour.idrissi@example.com,1,"Hadoop,TypeScript",REJECTED,2026-01-06
+215,Hiba Ben Ali,hiba.ali@example.com,4,"React,Kafka,Docker,Hadoop",ACCEPTED,2026-01-01
+216,Sara Tazi,sara.tazi@example.com,1,"SQL,Java,PostgreSQL",PENDING,2026-01-26
+217,Lina Ben Ali,lina.ali@example.com,5,"Kafka,PostgreSQL,Python,Java",PENDING,2026-01-12
+218,Amine Alaoui,amine.alaoui@example.com,4,"Next.js,Docker,Python,Hadoop",PENDING,2026-01-03
+219,Omar Haddad,omar.haddad@example.com,3,"Apache Spark,Java",REJECTED,2026-01-11
+220,Mehdi Rami,mehdi.rami@example.com,3,"SQL,Java,Apache Spark",PENDING,2026-01-10
+221,Hiba Cherif,hiba.cherif@example.com,4,"PostgreSQL,TypeScript",ACCEPTED,2026-01-13
+222,Hiba Bouaouda,hiba.bouaouda@example.com,5,"Kafka,Next.js,PostgreSQL",PENDING,2026-01-26
+223,Youssef Tazi,youssef.tazi@example.com,2,"TypeScript,Hadoop",REJECTED,2026-01-27
+224,Omar Idrissi,omar.idrissi@example.com,3,"Spring Boot,PostgreSQL",PENDING,2026-01-22
+225,Salma Fassi,salma.fassi@example.com,1,"TypeScript,Python,Next.js,PostgreSQL",PENDING,2026-01-15
+226,Nour Tazi,nour.tazi@example.com,4,"Docker,Java,Spring Boot",PENDING,2026-01-22
+227,Anas Bouaouda,anas.bouaouda@example.com,4,"Python,Hadoop",PENDING,2026-01-22
+228,Amine Ben Ali,amine.ali@example.com,4,"Docker,PostgreSQL",REJECTED,2026-01-12
+229,Sara Fassi,sara.fassi@example.com,3,"Docker,Next.js",ACCEPTED,2026-01-12
+230,Youssef Fassi,youssef.fassi@example.com,3,"React,PostgreSQL",PENDING,2026-01-13
+231,Lina Ben Ali,lina.ali@example.com,5,"Kafka,Python",ACCEPTED,2026-01-16
+232,Anas Ben Ali,anas.ali@example.com,3,"SQL,Next.js,Apache Spark",ACCEPTED,2026-01-20
+233,Lina Ben Ali,lina.ali@example.com,4,"Spring Boot,Next.js",PENDING,2026-01-06
+234,Hiba Idrissi,hiba.idrissi@example.com,2,"Spring Boot,React,Docker,SQL",PENDING,2026-01-10
+235,Hiba Rami,hiba.rami@example.com,2,"Spring Boot,Apache Spark",PENDING,2026-01-26
+236,Salma El Amrani,salma.amrani@example.com,5,"React,Hadoop,PostgreSQL",PENDING,2026-01-15
+237,Nour Ben Ali,nour.ali@example.com,4,"SQL,TypeScript",REJECTED,2026-01-23
+238,Mehdi Tazi,mehdi.tazi@example.com,4,"Spring Boot,Python,PostgreSQL,Kafka",REJECTED,2026-01-15
+239,Hiba Bouaouda,hiba.bouaouda@example.com,5,"Docker,Hadoop,Python,Kafka",PENDING,2026-01-14
+240,Youssef Rami,youssef.rami@example.com,3,"SQL,Python",PENDING,2026-01-06
+241,Hiba Rami,hiba.rami@example.com,5,"Spring Boot,SQL,Apache Spark",PENDING,2026-01-21
+242,Amine Cherif,amine.cherif@example.com,5,"React,Spring Boot,Kafka,Python",PENDING,2026-01-19
+243,Amine Fassi,amine.fassi@example.com,1,"Hadoop,PostgreSQL,Kafka,Java",PENDING,2026-01-27
+244,Sara Fassi,sara.fassi@example.com,5,"Docker,Apache Spark,Hadoop",PENDING,2026-01-14
+245,Salma Rami,salma.rami@example.com,4,"Docker,SQL,Next.js",PENDING,2026-01-08
+246,Salma Ben Ali,salma.ali@example.com,4,"Java,Python,Next.js,TypeScript",PENDING,2026-01-16
+247,Hiba Fassi,hiba.fassi@example.com,3,"PostgreSQL,Kafka",ACCEPTED,2026-01-24
+248,Amine Idrissi,amine.idrissi@example.com,1,"React,Spring Boot,PostgreSQL,Apache Spark",PENDING,2026-01-15
+249,Salma Haddad,salma.haddad@example.com,4,"Spring Boot,Java",REJECTED,2026-01-10
+250,Mehdi Haddad,mehdi.haddad@example.com,3,"PostgreSQL,Hadoop",PENDING,2026-01-24
+251,Amine Alaoui,amine.alaoui@example.com,1,"Next.js,Kafka,SQL,Docker",ACCEPTED,2026-01-01
+252,Anas Alaoui,anas.alaoui@example.com,1,"Apache Spark,Hadoop",PENDING,2026-01-12
+253,Omar Alaoui,omar.alaoui@example.com,1,"Docker,Kafka,Next.js,SQL",PENDING,2026-01-18
+254,Mehdi Bouaouda,mehdi.bouaouda@example.com,1,"Kafka,PostgreSQL,TypeScript",ACCEPTED,2026-01-12
+255,Sara Fassi,sara.fassi@example.com,4,"Apache Spark,PostgreSQL,React,SQL",REJECTED,2026-01-03
+256,Salma Rami,salma.rami@example.com,2,"Hadoop,Docker,Kafka",PENDING,2026-01-04
+257,Mehdi Idrissi,mehdi.idrissi@example.com,5,"React,PostgreSQL,Python",REJECTED,2026-01-07
+258,Mehdi Rami,mehdi.rami@example.com,3,"Java,Kafka",ACCEPTED,2026-01-05
+259,Anas Alaoui,anas.alaoui@example.com,3,"Hadoop,React",REJECTED,2026-01-05
+260,Hiba Bouaouda,hiba.bouaouda@example.com,5,"Hadoop,SQL,Kafka",REJECTED,2026-01-11
+261,Anas Alaoui,anas.alaoui@example.com,3,"Hadoop,SQL,Next.js,Java",PENDING,2026-01-12
+262,Mehdi Fassi,mehdi.fassi@example.com,4,"Kafka,Docker,Java",PENDING,2026-01-20
+263,Nour Fassi,nour.fassi@example.com,4,"Kafka,Java",PENDING,2026-01-19
+264,Anas Fassi,anas.fassi@example.com,5,"Python,Docker,Apache Spark",PENDING,2026-01-02
+265,Lina El Amrani,lina.amrani@example.com,2,"PostgreSQL,TypeScript,Python",ACCEPTED,2026-01-14
+266,Anas Fassi,anas.fassi@example.com,2,"Kafka,Java,Python",REJECTED,2026-01-17
+267,Hiba Alaoui,hiba.alaoui@example.com,3,"TypeScript,PostgreSQL,Python,Next.js",REJECTED,2026-01-18
+268,Hiba Cherif,hiba.cherif@example.com,3,"Next.js,Apache Spark,Docker,SQL",PENDING,2026-01-18
+269,Omar Cherif,omar.cherif@example.com,5,"Apache Spark,Next.js,PostgreSQL,Docker",PENDING,2026-01-12
+270,Omar Ben Ali,omar.ali@example.com,3,"Docker,React,TypeScript,Hadoop",PENDING,2026-01-27
+271,Omar El Amrani,omar.amrani@example.com,3,"Kafka,Spring Boot,PostgreSQL",ACCEPTED,2026-01-15
+272,Lina Haddad,lina.haddad@example.com,5,"SQL,React,Kafka,Python",REJECTED,2026-01-04
+273,Lina Haddad,lina.haddad@example.com,2,"Docker,React",PENDING,2026-01-08
+274,Youssef Tazi,youssef.tazi@example.com,2,"Kafka,Next.js,Spring Boot",PENDING,2026-01-22
+275,Anas Bouaouda,anas.bouaouda@example.com,2,"Docker,Next.js,Kafka",PENDING,2026-01-21
+276,Hiba Cherif,hiba.cherif@example.com,1,"Java,Spring Boot,Hadoop,Apache Spark",PENDING,2026-01-18
+277,Mehdi Bouaouda,mehdi.bouaouda@example.com,3,"TypeScript,Next.js",PENDING,2026-01-06
+278,Sara Cherif,sara.cherif@example.com,5,"Hadoop,Spring Boot,PostgreSQL,SQL",REJECTED,2026-01-15
+279,Salma Bouaouda,salma.bouaouda@example.com,2,"Next.js,SQL,Apache Spark,Spring Boot",ACCEPTED,2026-01-11
+280,Omar Bouaouda,omar.bouaouda@example.com,3,"Kafka,PostgreSQL",REJECTED,2026-01-26
+281,Lina Bouaouda,lina.bouaouda@example.com,1,"Docker,TypeScript,Kafka,React",ACCEPTED,2026-01-11
+282,Youssef Bouaouda,youssef.bouaouda@example.com,1,"Next.js,PostgreSQL",PENDING,2026-01-08
+283,Mehdi Haddad,mehdi.haddad@example.com,5,"SQL,PostgreSQL,Kafka",PENDING,2026-01-19
+284,Omar Idrissi,omar.idrissi@example.com,2,"Apache Spark,Java,Spring Boot,Next.js",ACCEPTED,2026-01-10
+285,Anas Cherif,anas.cherif@example.com,2,"Spring Boot,Docker,SQL,PostgreSQL",PENDING,2026-01-20
+286,Amine Alaoui,amine.alaoui@example.com,4,"Next.js,Hadoop",REJECTED,2026-01-12
+287,Salma Rami,salma.rami@example.com,4,"Apache Spark,Kafka,Hadoop,Spring Boot",REJECTED,2026-01-17
+288,Hiba Ben Ali,hiba.ali@example.com,5,"Spring Boot,Java,React,Hadoop",REJECTED,2026-01-07
+289,Amine Bouaouda,amine.bouaouda@example.com,2,"React,Next.js,Spring Boot",REJECTED,2026-01-22
+290,Salma Ben Ali,salma.ali@example.com,4,"Next.js,Java,Kafka,Python",ACCEPTED,2026-01-17
+291,Nour El Amrani,nour.amrani@example.com,3,"Next.js,Docker,SQL,Java",PENDING,2026-01-13
+292,Lina Fassi,lina.fassi@example.com,1,"Java,TypeScript",REJECTED,2026-01-12
+293,Sara Ben Ali,sara.ali@example.com,2,"Java,SQL,TypeScript",ACCEPTED,2026-01-06
+294,Hiba Tazi,hiba.tazi@example.com,5,"TypeScript,Kafka,Spring Boot",PENDING,2026-01-22
+295,Hiba Ben Ali,hiba.ali@example.com,2,"React,TypeScript",PENDING,2026-01-17
+296,Sara El Amrani,sara.amrani@example.com,5,"Next.js,Docker,React",ACCEPTED,2026-01-14
+297,Lina Haddad,lina.haddad@example.com,1,"PostgreSQL,Python,SQL",PENDING,2026-01-07
+298,Mehdi Fassi,mehdi.fassi@example.com,1,"Apache Spark,Kafka",REJECTED,2026-01-03
+299,Sara Alaoui,sara.alaoui@example.com,4,"Docker,Java,Apache Spark,Kafka",PENDING,2026-01-13
+300,Anas Haddad,anas.haddad@example.com,2,"Python,React",REJECTED,2026-01-10
+301,Hiba Fassi,hiba.fassi@example.com,5,"Docker,PostgreSQL,Apache Spark,SQL",PENDING,2026-01-05
+302,Mehdi Cherif,mehdi.cherif@example.com,2,"Java,React,Hadoop",ACCEPTED,2026-01-24
+303,Anas Alaoui,anas.alaoui@example.com,4,"PostgreSQL,Docker",REJECTED,2026-01-22
+304,Hiba Tazi,hiba.tazi@example.com,5,"Python,SQL,TypeScript",ACCEPTED,2026-01-06
+305,Lina Haddad,lina.haddad@example.com,5,"Kafka,Python,Next.js",ACCEPTED,2026-01-02
+306,Mehdi Rami,mehdi.rami@example.com,3,"Python,TypeScript,Apache Spark,SQL",PENDING,2026-01-07
+307,Salma Idrissi,salma.idrissi@example.com,3,"React,Apache Spark",ACCEPTED,2026-01-02
+308,Nour Fassi,nour.fassi@example.com,5,"Spring Boot,Apache Spark",REJECTED,2026-01-26
+309,Lina Alaoui,lina.alaoui@example.com,2,"PostgreSQL,SQL",PENDING,2026-01-01
+310,Youssef Alaoui,youssef.alaoui@example.com,2,"Kafka,Hadoop",ACCEPTED,2026-01-23
+311,Lina Rami,lina.rami@example.com,3,"SQL,TypeScript,Next.js",PENDING,2026-01-18
+312,Omar Idrissi,omar.idrissi@example.com,3,"Next.js,Kafka,Spring Boot,Docker",PENDING,2026-01-25
+313,Hiba Idrissi,hiba.idrissi@example.com,2,"Java,Hadoop,Apache Spark",PENDING,2026-01-24
+314,Omar Rami,omar.rami@example.com,3,"Hadoop,TypeScript,SQL,Python",PENDING,2026-01-07
+315,Mehdi Fassi,mehdi.fassi@example.com,3,"Next.js,React",PENDING,2026-01-21
+316,Salma Alaoui,salma.alaoui@example.com,5,"Python,PostgreSQL,Kafka",ACCEPTED,2026-01-05
+317,Amine Rami,amine.rami@example.com,1,"Java,React,Kafka,Spring Boot",PENDING,2026-01-27
+318,Mehdi Bouaouda,mehdi.bouaouda@example.com,5,"Apache Spark,Spring Boot,Python,Java",ACCEPTED,2026-01-07
+319,Hiba El Amrani,hiba.amrani@example.com,4,"Docker,Kafka,Hadoop,Next.js",PENDING,2026-01-22
+320,Sara Rami,sara.rami@example.com,3,"TypeScript,Java,Docker,React",REJECTED,2026-01-24
+321,Omar El Amrani,omar.amrani@example.com,1,"Kafka,Docker,TypeScript,Python",REJECTED,2026-01-04
+322,Amine Haddad,amine.haddad@example.com,3,"Hadoop,React",PENDING,2026-01-09
+323,Mehdi Ben Ali,mehdi.ali@example.com,2,"TypeScript,Next.js,Hadoop",PENDING,2026-01-08
+324,Youssef El Amrani,youssef.amrani@example.com,5,"TypeScript,Kafka",ACCEPTED,2026-01-13
+325,Sara El Amrani,sara.amrani@example.com,3,"Python,Spring Boot,Next.js,TypeScript",REJECTED,2026-01-21
+326,Youssef Rami,youssef.rami@example.com,5,"Apache Spark,Kafka",ACCEPTED,2026-01-28
+327,Omar El Amrani,omar.amrani@example.com,5,"Docker,SQL",PENDING,2026-01-18
+328,Amine Idrissi,amine.idrissi@example.com,4,"Apache Spark,Hadoop",PENDING,2026-01-05
+329,Omar Bouaouda,omar.bouaouda@example.com,4,"Apache Spark,Hadoop,TypeScript,React",PENDING,2026-01-11
+330,Youssef Rami,youssef.rami@example.com,1,"PostgreSQL,Java,Spring Boot,TypeScript",PENDING,2026-01-08
+331,Nour Fassi,nour.fassi@example.com,4,"TypeScript,PostgreSQL,Java,SQL",ACCEPTED,2026-01-26
+332,Lina Idrissi,lina.idrissi@example.com,5,"TypeScript,Kafka,Python,Docker",PENDING,2026-01-03
+333,Lina Ben Ali,lina.ali@example.com,2,"SQL,Python",ACCEPTED,2026-01-13
+334,Hiba Idrissi,hiba.idrissi@example.com,4,"Spring Boot,Java",PENDING,2026-01-10
+335,Omar Ben Ali,omar.ali@example.com,4,"Spring Boot,Python",REJECTED,2026-01-14
+336,Anas Rami,anas.rami@example.com,5,"Spring Boot,Java,Kafka",PENDING,2026-01-12
+337,Nour Fassi,nour.fassi@example.com,4,"TypeScript,Java,SQL",PENDING,2026-01-14
+338,Anas Haddad,anas.haddad@example.com,3,"React,Python,TypeScript,Docker",PENDING,2026-01-05
+339,Omar Alaoui,omar.alaoui@example.com,3,"Spring Boot,Python",ACCEPTED,2026-01-14
+340,Omar Alaoui,omar.alaoui@example.com,4,"PostgreSQL,SQL",REJECTED,2026-01-08
+341,Nour Haddad,nour.haddad@example.com,4,"Spring Boot,Python,SQL",PENDING,2026-01-01
+342,Nour Tazi,nour.tazi@example.com,5,"Next.js,PostgreSQL,TypeScript",PENDING,2026-01-27
+343,Omar Idrissi,omar.idrissi@example.com,4,"Kafka,Apache Spark,Next.js,PostgreSQL",PENDING,2026-01-06
+344,Omar Alaoui,omar.alaoui@example.com,4,"Apache Spark,PostgreSQL,TypeScript,SQL",PENDING,2026-01-27
+345,Youssef Fassi,youssef.fassi@example.com,5,"Hadoop,React",PENDING,2026-01-06
+346,Salma Haddad,salma.haddad@example.com,4,"SQL,Spring Boot,TypeScript",PENDING,2026-01-22
+347,Omar Haddad,omar.haddad@example.com,4,"Docker,Python,TypeScript",PENDING,2026-01-26
+348,Salma Fassi,salma.fassi@example.com,4,"Hadoop,TypeScript,React",REJECTED,2026-01-17
+349,Sara Idrissi,sara.idrissi@example.com,2,"React,Hadoop,Spring Boot,Docker",PENDING,2026-01-25
+350,Amine Fassi,amine.fassi@example.com,4,"Hadoop,Docker",PENDING,2026-01-22
+351,Mehdi Ben Ali,mehdi.ali@example.com,5,"Spring Boot,SQL",REJECTED,2026-01-08
+352,Anas Fassi,anas.fassi@example.com,4,"Hadoop,Apache Spark,Next.js,PostgreSQL",REJECTED,2026-01-13
+353,Anas Bouaouda,anas.bouaouda@example.com,4,"Java,Next.js,Spring Boot",PENDING,2026-01-10
+354,Youssef Bouaouda,youssef.bouaouda@example.com,2,"SQL,PostgreSQL,Next.js",REJECTED,2026-01-26
+355,Salma Idrissi,salma.idrissi@example.com,1,"Spring Boot,Next.js,Docker",PENDING,2026-01-11
+356,Sara Ben Ali,sara.ali@example.com,2,"PostgreSQL,Docker",PENDING,2026-01-04
+357,Anas Bouaouda,anas.bouaouda@example.com,2,"Python,PostgreSQL,React,TypeScript",ACCEPTED,2026-01-15
+358,Amine Bouaouda,amine.bouaouda@example.com,5,"Docker,TypeScript,Kafka,Java",PENDING,2026-01-24
+359,Salma Fassi,salma.fassi@example.com,3,"TypeScript,Java,Apache Spark",PENDING,2026-01-07
+360,Nour Ben Ali,nour.ali@example.com,1,"Python,PostgreSQL,Docker,Apache Spark",PENDING,2026-01-15
+361,Salma Rami,salma.rami@example.com,1,"PostgreSQL,Hadoop,TypeScript,Docker",PENDING,2026-01-19
+362,Hiba Alaoui,hiba.alaoui@example.com,2,"Python,Docker,SQL,Spring Boot",PENDING,2026-01-22
+363,Youssef Haddad,youssef.haddad@example.com,2,"Spring Boot,Python,PostgreSQL",REJECTED,2026-01-23
+364,Mehdi Tazi,mehdi.tazi@example.com,4,"Python,Hadoop,TypeScript,Docker",REJECTED,2026-01-06
+365,Amine Rami,amine.rami@example.com,2,"Next.js,SQL",PENDING,2026-01-05
+366,Salma Fassi,salma.fassi@example.com,2,"PostgreSQL,Java",PENDING,2026-01-16
+367,Mehdi Rami,mehdi.rami@example.com,4,"Docker,Next.js,TypeScript,Kafka",ACCEPTED,2026-01-14
+368,Amine Ben Ali,amine.ali@example.com,2,"Java,Apache Spark,SQL,Kafka",REJECTED,2026-01-09
+369,Omar Bouaouda,omar.bouaouda@example.com,1,"Hadoop,Next.js,React",REJECTED,2026-01-17
+370,Youssef Cherif,youssef.cherif@example.com,2,"PostgreSQL,React,Java,Next.js",ACCEPTED,2026-01-18
+371,Youssef Haddad,youssef.haddad@example.com,1,"Java,Next.js,SQL",ACCEPTED,2026-01-12
+372,Youssef Haddad,youssef.haddad@example.com,3,"Kafka,Hadoop",REJECTED,2026-01-23
+373,Mehdi Bouaouda,mehdi.bouaouda@example.com,3,"Python,Apache Spark,Docker,Java",REJECTED,2026-01-19
+374,Omar Fassi,omar.fassi@example.com,3,"Python,PostgreSQL,SQL,Hadoop",REJECTED,2026-01-19
+375,Youssef Bouaouda,youssef.bouaouda@example.com,2,"Java,SQL,Python",PENDING,2026-01-23
+376,Amine Idrissi,amine.idrissi@example.com,2,"Docker,TypeScript",REJECTED,2026-01-16
+377,Omar Tazi,omar.tazi@example.com,5,"Next.js,Spring Boot,Docker",PENDING,2026-01-13
+378,Hiba Alaoui,hiba.alaoui@example.com,1,"PostgreSQL,Hadoop,Java",ACCEPTED,2026-01-28
+379,Hiba Ben Ali,hiba.ali@example.com,3,"TypeScript,Apache Spark,Kafka,Docker",PENDING,2026-01-16
+380,Omar Idrissi,omar.idrissi@example.com,3,"Hadoop,Python,Kafka,Next.js",PENDING,2026-01-26
+381,Sara Ben Ali,sara.ali@example.com,4,"Next.js,Java,Spring Boot,Python",PENDING,2026-01-15
+382,Mehdi Haddad,mehdi.haddad@example.com,3,"Python,Docker,SQL,Kafka",PENDING,2026-01-28
+383,Hiba Cherif,hiba.cherif@example.com,2,"PostgreSQL,Docker",PENDING,2026-01-21
+384,Mehdi Cherif,mehdi.cherif@example.com,1,"Kafka,Apache Spark,TypeScript,Spring Boot",PENDING,2026-01-23
+385,Lina Alaoui,lina.alaoui@example.com,5,"Python,Hadoop",ACCEPTED,2026-01-08
+386,Sara El Amrani,sara.amrani@example.com,1,"PostgreSQL,Spring Boot,TypeScript,Python",PENDING,2026-01-16
+387,Mehdi Ben Ali,mehdi.ali@example.com,2,"Spring Boot,Kafka,PostgreSQL,Hadoop",ACCEPTED,2026-01-10
+388,Amine Bouaouda,amine.bouaouda@example.com,5,"React,Hadoop",PENDING,2026-01-01
+389,Salma Idrissi,salma.idrissi@example.com,4,"Apache Spark,Docker,Python,TypeScript",PENDING,2026-01-20
+390,Youssef Ben Ali,youssef.ali@example.com,4,"Spring Boot,Hadoop",PENDING,2026-01-24
+391,Mehdi Idrissi,mehdi.idrissi@example.com,1,"Apache Spark,SQL",PENDING,2026-01-21
+392,Anas Fassi,anas.fassi@example.com,3,"Kafka,Hadoop,SQL,Java",PENDING,2026-01-28
+393,Anas Fassi,anas.fassi@example.com,2,"Apache Spark,TypeScript,SQL,Java",ACCEPTED,2026-01-26
+394,Mehdi Ben Ali,mehdi.ali@example.com,1,"Next.js,Docker",REJECTED,2026-01-20
+395,Sara Idrissi,sara.idrissi@example.com,3,"Python,TypeScript,Hadoop",REJECTED,2026-01-14
+396,Amine Alaoui,amine.alaoui@example.com,1,"Java,Hadoop",PENDING,2026-01-03
+397,Lina El Amrani,lina.amrani@example.com,5,"TypeScript,React",ACCEPTED,2026-01-10
+398,Mehdi Tazi,mehdi.tazi@example.com,5,"Docker,React",PENDING,2026-01-18
+399,Omar Ben Ali,omar.ali@example.com,2,"Spring Boot,React,Apache Spark",REJECTED,2026-01-26
+400,Hiba Tazi,hiba.tazi@example.com,4,"Docker,Kafka,Spring Boot,SQL",PENDING,2026-01-23
+401,Sara Haddad,sara.haddad@example.com,5,"TypeScript,Spring Boot",REJECTED,2026-01-15
+402,Sara Cherif,sara.cherif@example.com,2,"Kafka,Docker,Python,Spring Boot",PENDING,2026-01-01
+403,Amine Alaoui,amine.alaoui@example.com,3,"React,Kafka,SQL",PENDING,2026-01-06
+404,Omar Ben Ali,omar.ali@example.com,5,"PostgreSQL,TypeScript",PENDING,2026-01-09
+405,Omar Fassi,omar.fassi@example.com,1,"Spring Boot,Next.js,Docker,React",ACCEPTED,2026-01-12
+406,Nour Bouaouda,nour.bouaouda@example.com,1,"Python,SQL,Spring Boot",PENDING,2026-01-19
+407,Anas El Amrani,anas.amrani@example.com,4,"Java,Apache Spark",PENDING,2026-01-02
+408,Mehdi Bouaouda,mehdi.bouaouda@example.com,4,"Java,React",PENDING,2026-01-26
+409,Hiba Haddad,hiba.haddad@example.com,1,"Kafka,PostgreSQL,SQL",REJECTED,2026-01-27
+410,Hiba Ben Ali,hiba.ali@example.com,5,"Docker,Java,Python,Apache Spark",PENDING,2026-01-26
+411,Mehdi Ben Ali,mehdi.ali@example.com,5,"SQL,Kafka,PostgreSQL",ACCEPTED,2026-01-03
+412,Sara Idrissi,sara.idrissi@example.com,3,"SQL,Hadoop",REJECTED,2026-01-26
+413,Lina Alaoui,lina.alaoui@example.com,5,"Hadoop,Next.js,Apache Spark",PENDING,2026-01-24
+414,Amine El Amrani,amine.amrani@example.com,1,"Java,Apache Spark,React",PENDING,2026-01-12
+415,Sara Tazi,sara.tazi@example.com,2,"Kafka,SQL,Spring Boot,Apache Spark",ACCEPTED,2026-01-17
+416,Salma El Amrani,salma.amrani@example.com,1,"Kafka,SQL",PENDING,2026-01-03
+417,Anas Tazi,anas.tazi@example.com,2,"PostgreSQL,Next.js,Spring Boot,Hadoop",ACCEPTED,2026-01-17
+418,Youssef Fassi,youssef.fassi@example.com,3,"Java,TypeScript,Python,Apache Spark",PENDING,2026-01-10
+419,Mehdi Idrissi,mehdi.idrissi@example.com,2,"Next.js,SQL,Apache Spark",PENDING,2026-01-03
+420,Nour Ben Ali,nour.ali@example.com,4,"Spring Boot,Python",PENDING,2026-01-15
+421,Mehdi Ben Ali,mehdi.ali@example.com,3,"PostgreSQL,Apache Spark,Next.js,SQL",PENDING,2026-01-15
+422,Youssef Bouaouda,youssef.bouaouda@example.com,3,"SQL,Hadoop,Java,Apache Spark",PENDING,2026-01-27
+423,Youssef Haddad,youssef.haddad@example.com,3,"TypeScript,React,Java",PENDING,2026-01-22
+424,Amine El Amrani,amine.amrani@example.com,1,"Next.js,React,Docker",ACCEPTED,2026-01-08
+425,Youssef Bouaouda,youssef.bouaouda@example.com,2,"Java,Kafka",PENDING,2026-01-27
+426,Lina Tazi,lina.tazi@example.com,5,"Docker,Kafka,Spring Boot",PENDING,2026-01-19
+427,Youssef El Amrani,youssef.amrani@example.com,2,"Apache Spark,Docker",PENDING,2026-01-15
+428,Hiba Ben Ali,hiba.ali@example.com,5,"Next.js,Java",ACCEPTED,2026-01-06
+429,Mehdi Alaoui,mehdi.alaoui@example.com,2,"TypeScript,Docker",PENDING,2026-01-14
+430,Lina Bouaouda,lina.bouaouda@example.com,5,"SQL,Next.js,Python",REJECTED,2026-01-02
+431,Nour Haddad,nour.haddad@example.com,1,"SQL,Next.js,TypeScript,React",PENDING,2026-01-16
+432,Omar Tazi,omar.tazi@example.com,5,"TypeScript,Apache Spark",PENDING,2026-01-21
+433,Anas El Amrani,anas.amrani@example.com,4,"Kafka,PostgreSQL,Next.js",PENDING,2026-01-18
+434,Nour Rami,nour.rami@example.com,3,"TypeScript,SQL,Python",REJECTED,2026-01-01
+435,Lina El Amrani,lina.amrani@example.com,5,"Java,Next.js,React",PENDING,2026-01-12
+436,Amine Ben Ali,amine.ali@example.com,5,"Docker,Apache Spark",PENDING,2026-01-09
+437,Lina Fassi,lina.fassi@example.com,5,"PostgreSQL,Python,Docker",PENDING,2026-01-08
+438,Hiba Fassi,hiba.fassi@example.com,5,"Kafka,PostgreSQL",PENDING,2026-01-19
+439,Nour Haddad,nour.haddad@example.com,1,"React,SQL,Python",PENDING,2026-01-16
+440,Sara Haddad,sara.haddad@example.com,3,"Apache Spark,Java,React,Next.js",REJECTED,2026-01-01
+441,Lina Bouaouda,lina.bouaouda@example.com,1,"Kafka,Python,PostgreSQL",PENDING,2026-01-02
+442,Nour Bouaouda,nour.bouaouda@example.com,3,"React,PostgreSQL",ACCEPTED,2026-01-03
+443,Nour Ben Ali,nour.ali@example.com,4,"SQL,PostgreSQL,Python",ACCEPTED,2026-01-06
+444,Hiba Bouaouda,hiba.bouaouda@example.com,5,"React,Hadoop,PostgreSQL,Apache Spark",PENDING,2026-01-22
+445,Mehdi Cherif,mehdi.cherif@example.com,1,"Kafka,SQL,Python,Hadoop",REJECTED,2026-01-24
+446,Mehdi Fassi,mehdi.fassi@example.com,5,"Python,Hadoop",PENDING,2026-01-11
+447,Nour Ben Ali,nour.ali@example.com,3,"Python,PostgreSQL,Spring Boot",PENDING,2026-01-08
+448,Amine Ben Ali,amine.ali@example.com,3,"Docker,Kafka,PostgreSQL,Next.js",PENDING,2026-01-01
+449,Lina Ben Ali,lina.ali@example.com,4,"SQL,Spring Boot,Java",ACCEPTED,2026-01-02
+450,Mehdi Bouaouda,mehdi.bouaouda@example.com,4,"Next.js,TypeScript,PostgreSQL",PENDING,2026-01-18
+451,Salma Fassi,salma.fassi@example.com,1,"Docker,Apache Spark,Python,Next.js",PENDING,2026-01-03
+452,Sara Idrissi,sara.idrissi@example.com,4,"Spring Boot,Kafka,PostgreSQL",PENDING,2026-01-06
+453,Youssef Rami,youssef.rami@example.com,4,"PostgreSQL,Hadoop",PENDING,2026-01-20
+454,Mehdi Bouaouda,mehdi.bouaouda@example.com,2,"TypeScript,Python,Java,Spring Boot",PENDING,2026-01-11
+455,Mehdi Rami,mehdi.rami@example.com,2,"Kafka,React,SQL,Hadoop",PENDING,2026-01-10
+456,Sara Tazi,sara.tazi@example.com,1,"React,Next.js,Python,Java",ACCEPTED,2026-01-12
+457,Youssef Cherif,youssef.cherif@example.com,1,"Docker,Hadoop,Next.js,Apache Spark",PENDING,2026-01-04
+458,Amine Cherif,amine.cherif@example.com,4,"Next.js,Spring Boot",ACCEPTED,2026-01-10
+459,Salma Cherif,salma.cherif@example.com,2,"Docker,React",PENDING,2026-01-13
+460,Mehdi Idrissi,mehdi.idrissi@example.com,4,"Next.js,Java",ACCEPTED,2026-01-09
+461,Omar Haddad,omar.haddad@example.com,1,"Hadoop,Java,Python",PENDING,2026-01-25
+462,Hiba Rami,hiba.rami@example.com,4,"Hadoop,Apache Spark,React",REJECTED,2026-01-02
+463,Mehdi Rami,mehdi.rami@example.com,1,"Next.js,Hadoop,Apache Spark,Kafka",ACCEPTED,2026-01-10
+464,Sara Rami,sara.rami@example.com,4,"React,Hadoop,Docker,Python",PENDING,2026-01-04
+465,Amine Haddad,amine.haddad@example.com,1,"Python,Java",ACCEPTED,2026-01-14
+466,Lina Bouaouda,lina.bouaouda@example.com,5,"SQL,PostgreSQL,Spring Boot,Hadoop",ACCEPTED,2026-01-13
+467,Anas Idrissi,anas.idrissi@example.com,5,"React,Next.js,Java",REJECTED,2026-01-26
+468,Anas Tazi,anas.tazi@example.com,5,"TypeScript,Python",REJECTED,2026-01-05
+469,Nour Ben Ali,nour.ali@example.com,3,"Hadoop,Spring Boot",REJECTED,2026-01-26
+470,Hiba Tazi,hiba.tazi@example.com,5,"TypeScript,Docker,Next.js",ACCEPTED,2026-01-19
+471,Sara Bouaouda,sara.bouaouda@example.com,4,"TypeScript,Python,Hadoop",PENDING,2026-01-20
+472,Mehdi Idrissi,mehdi.idrissi@example.com,1,"Apache Spark,Java,Next.js,SQL",PENDING,2026-01-12
+473,Omar Cherif,omar.cherif@example.com,2,"Next.js,Docker,Spring Boot",PENDING,2026-01-28
+474,Omar Alaoui,omar.alaoui@example.com,1,"SQL,TypeScript,Hadoop",PENDING,2026-01-21
+475,Salma Haddad,salma.haddad@example.com,3,"Kafka,Next.js,React",PENDING,2026-01-28
+476,Anas Bouaouda,anas.bouaouda@example.com,2,"SQL,React",REJECTED,2026-01-13
+477,Nour El Amrani,nour.amrani@example.com,1,"Apache Spark,Kafka",PENDING,2026-01-27
+478,Sara Alaoui,sara.alaoui@example.com,3,"PostgreSQL,Apache Spark",ACCEPTED,2026-01-09
+479,Anas Tazi,anas.tazi@example.com,4,"Spring Boot,Docker,Java,Apache Spark",REJECTED,2026-01-12
+480,Salma Bouaouda,salma.bouaouda@example.com,2,"Hadoop,React,PostgreSQL",PENDING,2026-01-12
+481,Youssef Cherif,youssef.cherif@example.com,5,"TypeScript,Java",PENDING,2026-01-06
+482,Lina Haddad,lina.haddad@example.com,1,"Apache Spark,SQL,TypeScript,React",ACCEPTED,2026-01-01
+483,Amine Bouaouda,amine.bouaouda@example.com,3,"Java,Apache Spark,SQL,Hadoop",ACCEPTED,2026-01-23
+484,Mehdi Idrissi,mehdi.idrissi@example.com,5,"SQL,Apache Spark,Next.js",REJECTED,2026-01-10
+485,Mehdi Fassi,mehdi.fassi@example.com,3,"Java,React",REJECTED,2026-01-22
+486,Nour Fassi,nour.fassi@example.com,1,"SQL,Docker,Spring Boot",PENDING,2026-01-16
+487,Omar Idrissi,omar.idrissi@example.com,2,"SQL,Docker,Kafka",REJECTED,2026-01-07
+488,Lina El Amrani,lina.amrani@example.com,1,"TypeScript,Docker,PostgreSQL,Python",ACCEPTED,2026-01-24
+489,Omar Cherif,omar.cherif@example.com,5,"TypeScript,Kafka,Java",PENDING,2026-01-19
+490,Hiba Haddad,hiba.haddad@example.com,3,"React,Docker,Next.js,PostgreSQL",PENDING,2026-01-17
+491,Anas Bouaouda,anas.bouaouda@example.com,3,"Spring Boot,Next.js,Python",REJECTED,2026-01-24
+492,Amine Idrissi,amine.idrissi@example.com,3,"Spring Boot,Apache Spark,PostgreSQL,Docker",ACCEPTED,2026-01-24
+493,Hiba Idrissi,hiba.idrissi@example.com,1,"Hadoop,SQL,Next.js",ACCEPTED,2026-01-28
+494,Sara Fassi,sara.fassi@example.com,1,"Hadoop,Spring Boot,Next.js,Apache Spark",ACCEPTED,2026-01-17
+495,Anas Cherif,anas.cherif@example.com,3,"Java,Python,Docker",ACCEPTED,2026-01-07
+496,Nour Alaoui,nour.alaoui@example.com,1,"PostgreSQL,Python",ACCEPTED,2026-01-25
+497,Hiba Bouaouda,hiba.bouaouda@example.com,3,"Docker,Java,Kafka",PENDING,2026-01-15
+498,Amine Fassi,amine.fassi@example.com,5,"Next.js,Spring Boot",ACCEPTED,2026-01-05
+499,Mehdi Tazi,mehdi.tazi@example.com,5,"Next.js,TypeScript,Java",PENDING,2026-01-02
+500,Hiba El Amrani,hiba.amrani@example.com,1,"React,Apache Spark,Java",PENDING,2026-01-22
+501,Lina Idrissi,lina.idrissi@example.com,5,"Python,Spring Boot,TypeScript",PENDING,2026-01-17
+502,Amine Ben Ali,amine.ali@example.com,5,"SQL,Kafka",REJECTED,2026-01-15
+503,Anas Idrissi,anas.idrissi@example.com,3,"Docker,Python,PostgreSQL",PENDING,2026-01-16
+504,Amine Tazi,amine.tazi@example.com,2,"Apache Spark,Kafka",PENDING,2026-01-24
+505,Sara Fassi,sara.fassi@example.com,3,"Python,Spring Boot,PostgreSQL,Java",REJECTED,2026-01-13
+506,Nour El Amrani,nour.amrani@example.com,1,"Java,Docker,Spring Boot,Kafka",ACCEPTED,2026-01-02
+507,Salma Tazi,salma.tazi@example.com,2,"React,SQL",PENDING,2026-01-16
+508,Sara Cherif,sara.cherif@example.com,5,"Docker,Spring Boot,React",REJECTED,2026-01-09
+509,Amine Tazi,amine.tazi@example.com,3,"React,Hadoop",PENDING,2026-01-04
+510,Youssef Alaoui,youssef.alaoui@example.com,3,"Hadoop,Apache Spark",REJECTED,2026-01-25
+511,Lina Idrissi,lina.idrissi@example.com,4,"TypeScript,SQL,Python,Java",PENDING,2026-01-18
+512,Salma Idrissi,salma.idrissi@example.com,1,"Java,Kafka",PENDING,2026-01-22
+513,Nour Alaoui,nour.alaoui@example.com,1,"Spring Boot,React",PENDING,2026-01-03
+514,Lina Alaoui,lina.alaoui@example.com,2,"SQL,Next.js,Java",PENDING,2026-01-04
+515,Omar Idrissi,omar.idrissi@example.com,1,"PostgreSQL,TypeScript,Spring Boot,Hadoop",PENDING,2026-01-28
+516,Amine Bouaouda,amine.bouaouda@example.com,1,"PostgreSQL,Next.js,Hadoop",PENDING,2026-01-09
+517,Hiba Bouaouda,hiba.bouaouda@example.com,3,"TypeScript,Kafka",ACCEPTED,2026-01-15
+518,Salma Tazi,salma.tazi@example.com,2,"Python,Spring Boot,Kafka,Java",PENDING,2026-01-28
+519,Mehdi Fassi,mehdi.fassi@example.com,5,"Hadoop,Docker,Next.js",ACCEPTED,2026-01-06
+520,Hiba Fassi,hiba.fassi@example.com,4,"Docker,Python",PENDING,2026-01-16
+521,Mehdi Alaoui,mehdi.alaoui@example.com,3,"Spring Boot,SQL",PENDING,2026-01-21
+522,Anas Fassi,anas.fassi@example.com,5,"Hadoop,Apache Spark,PostgreSQL,React",PENDING,2026-01-17
+523,Mehdi Haddad,mehdi.haddad@example.com,5,"PostgreSQL,Docker,TypeScript",REJECTED,2026-01-05
+524,Sara El Amrani,sara.amrani@example.com,2,"Python,React,Next.js,Hadoop",PENDING,2026-01-28
+525,Salma Idrissi,salma.idrissi@example.com,5,"PostgreSQL,SQL",PENDING,2026-01-02
+526,Anas Tazi,anas.tazi@example.com,5,"Apache Spark,Spring Boot,Next.js",ACCEPTED,2026-01-15
+527,Youssef Alaoui,youssef.alaoui@example.com,1,"PostgreSQL,Spring Boot,Next.js",PENDING,2026-01-24
+528,Mehdi Tazi,mehdi.tazi@example.com,1,"React,Kafka",REJECTED,2026-01-01
+529,Nour Cherif,nour.cherif@example.com,1,"React,Apache Spark,Next.js,PostgreSQL",PENDING,2026-01-12
+530,Salma Idrissi,salma.idrissi@example.com,4,"Hadoop,Kafka,Next.js,PostgreSQL",PENDING,2026-01-23
+531,Youssef Haddad,youssef.haddad@example.com,3,"PostgreSQL,Kafka",REJECTED,2026-01-27
+532,Anas Idrissi,anas.idrissi@example.com,4,"Spring Boot,Java,Python,Next.js",PENDING,2026-01-05
+533,Omar Fassi,omar.fassi@example.com,4,"Apache Spark,Spring Boot",PENDING,2026-01-28
+534,Salma Haddad,salma.haddad@example.com,5,"PostgreSQL,Spring Boot,TypeScript,Java",PENDING,2026-01-21
+535,Salma Alaoui,salma.alaoui@example.com,5,"Hadoop,React,Python,Next.js",PENDING,2026-01-01
+536,Anas Tazi,anas.tazi@example.com,2,"Next.js,React,Python,Hadoop",PENDING,2026-01-24
+537,Mehdi Fassi,mehdi.fassi@example.com,2,"PostgreSQL,React,TypeScript,Hadoop",PENDING,2026-01-20
+538,Mehdi Idrissi,mehdi.idrissi@example.com,5,"Next.js,Python,Docker",REJECTED,2026-01-14
+539,Omar Rami,omar.rami@example.com,2,"Kafka,React,Apache Spark",REJECTED,2026-01-07
+540,Omar Idrissi,omar.idrissi@example.com,3,"Python,Docker,Kafka,React",PENDING,2026-01-18
+541,Hiba Rami,hiba.rami@example.com,5,"Hadoop,Kafka,TypeScript",PENDING,2026-01-22
+542,Mehdi El Amrani,mehdi.amrani@example.com,1,"Spring Boot,Java,TypeScript,Python",PENDING,2026-01-02
+543,Omar Bouaouda,omar.bouaouda@example.com,1,"Docker,SQL,Python",PENDING,2026-01-27
+544,Lina Rami,lina.rami@example.com,5,"PostgreSQL,Next.js",REJECTED,2026-01-04
+545,Lina Rami,lina.rami@example.com,1,"Apache Spark,React,SQL",ACCEPTED,2026-01-23
+546,Mehdi Tazi,mehdi.tazi@example.com,3,"PostgreSQL,React,Java,Hadoop",PENDING,2026-01-24
+547,Nour Alaoui,nour.alaoui@example.com,5,"Docker,Kafka",REJECTED,2026-01-12
+548,Nour Haddad,nour.haddad@example.com,1,"Apache Spark,SQL,Next.js,Python",PENDING,2026-01-22
+549,Amine Rami,amine.rami@example.com,3,"TypeScript,Java",REJECTED,2026-01-14
+550,Omar Bouaouda,omar.bouaouda@example.com,3,"Hadoop,SQL",ACCEPTED,2026-01-01
+551,Amine El Amrani,amine.amrani@example.com,5,"PostgreSQL,Hadoop",PENDING,2026-01-02
+552,Salma Fassi,salma.fassi@example.com,2,"PostgreSQL,Spring Boot,Kafka,React",REJECTED,2026-01-08
+553,Youssef Rami,youssef.rami@example.com,4,"TypeScript,React",PENDING,2026-01-18
+554,Hiba Haddad,hiba.haddad@example.com,3,"Docker,PostgreSQL",PENDING,2026-01-11
+555,Lina Fassi,lina.fassi@example.com,3,"Next.js,React,Java,Spring Boot",ACCEPTED,2026-01-22
+556,Lina Fassi,lina.fassi@example.com,1,"Apache Spark,Java,PostgreSQL,TypeScript",ACCEPTED,2026-01-26
+557,Omar Rami,omar.rami@example.com,5,"SQL,Java,React,PostgreSQL",ACCEPTED,2026-01-17
+558,Salma El Amrani,salma.amrani@example.com,1,"Docker,Apache Spark,PostgreSQL",PENDING,2026-01-17
+559,Amine Rami,amine.rami@example.com,2,"Java,Docker,Spring Boot,Apache Spark",ACCEPTED,2026-01-22
+560,Youssef Haddad,youssef.haddad@example.com,4,"Kafka,TypeScript,Spring Boot,Python",PENDING,2026-01-01
+561,Sara Ben Ali,sara.ali@example.com,3,"Java,Python",REJECTED,2026-01-26
+562,Youssef Fassi,youssef.fassi@example.com,4,"SQL,TypeScript",ACCEPTED,2026-01-13
+563,Mehdi Idrissi,mehdi.idrissi@example.com,5,"TypeScript,Docker",PENDING,2026-01-04
+564,Nour Ben Ali,nour.ali@example.com,1,"Hadoop,Java,Spring Boot,PostgreSQL",PENDING,2026-01-17
+565,Omar Fassi,omar.fassi@example.com,4,"SQL,Next.js",PENDING,2026-01-13
+566,Salma Bouaouda,salma.bouaouda@example.com,2,"Apache Spark,Python,TypeScript,React",PENDING,2026-01-10
+567,Hiba El Amrani,hiba.amrani@example.com,5,"React,Python,Spring Boot,Java",REJECTED,2026-01-01
+568,Mehdi Rami,mehdi.rami@example.com,4,"Spring Boot,SQL,Apache Spark,PostgreSQL",REJECTED,2026-01-07
+569,Amine Bouaouda,amine.bouaouda@example.com,3,"Apache Spark,Hadoop",PENDING,2026-01-27
+570,Youssef Bouaouda,youssef.bouaouda@example.com,5,"Hadoop,Java,React,Next.js",PENDING,2026-01-21
+571,Omar Ben Ali,omar.ali@example.com,3,"Spring Boot,Apache Spark,Hadoop",PENDING,2026-01-16
+572,Amine Haddad,amine.haddad@example.com,2,"SQL,Hadoop",PENDING,2026-01-03
+573,Salma Alaoui,salma.alaoui@example.com,5,"Hadoop,Docker,SQL",PENDING,2026-01-23
+574,Nour Fassi,nour.fassi@example.com,3,"PostgreSQL,TypeScript,Python",PENDING,2026-01-01
+575,Lina Tazi,lina.tazi@example.com,4,"PostgreSQL,Python,Kafka",ACCEPTED,2026-01-16
+576,Hiba Cherif,hiba.cherif@example.com,5,"React,Spring Boot,Python",PENDING,2026-01-21
+577,Omar Bouaouda,omar.bouaouda@example.com,5,"Apache Spark,SQL,Spring Boot,Hadoop",PENDING,2026-01-01
+578,Nour Fassi,nour.fassi@example.com,3,"Hadoop,Apache Spark,Java",REJECTED,2026-01-18
+579,Anas Alaoui,anas.alaoui@example.com,5,"Python,PostgreSQL,TypeScript,Apache Spark",PENDING,2026-01-25
+580,Amine Alaoui,amine.alaoui@example.com,1,"React,Spring Boot,TypeScript,PostgreSQL",PENDING,2026-01-17
+581,Nour Bouaouda,nour.bouaouda@example.com,5,"Python,Next.js,Kafka,Hadoop",PENDING,2026-01-19
+582,Salma Idrissi,salma.idrissi@example.com,1,"Apache Spark,Next.js",PENDING,2026-01-08
+583,Hiba Haddad,hiba.haddad@example.com,3,"Docker,Apache Spark",ACCEPTED,2026-01-17
+584,Salma Alaoui,salma.alaoui@example.com,1,"Java,Docker",REJECTED,2026-01-11
+585,Omar Cherif,omar.cherif@example.com,4,"React,Hadoop,Python,TypeScript",PENDING,2026-01-21
+586,Nour Ben Ali,nour.ali@example.com,3,"SQL,TypeScript,Apache Spark,React",PENDING,2026-01-13
+587,Salma Alaoui,salma.alaoui@example.com,2,"Java,React,Python,Next.js",PENDING,2026-01-06
+588,Anas Cherif,anas.cherif@example.com,3,"Python,Kafka",REJECTED,2026-01-06
+589,Youssef Haddad,youssef.haddad@example.com,4,"PostgreSQL,Spring Boot,Next.js",ACCEPTED,2026-01-22
+590,Lina Fassi,lina.fassi@example.com,2,"Docker,TypeScript",PENDING,2026-01-01
+591,Amine Fassi,amine.fassi@example.com,2,"Python,Kafka,React,Java",PENDING,2026-01-19
+592,Amine Cherif,amine.cherif@example.com,5,"React,TypeScript",PENDING,2026-01-20
+593,Omar Ben Ali,omar.ali@example.com,4,"Next.js,Hadoop",PENDING,2026-01-16
+594,Lina Tazi,lina.tazi@example.com,2,"Python,Hadoop,Kafka,React",PENDING,2026-01-09
+595,Salma Fassi,salma.fassi@example.com,1,"Spring Boot,Apache Spark,TypeScript,Hadoop",PENDING,2026-01-05
+596,Lina Rami,lina.rami@example.com,4,"Docker,TypeScript,Python,Spring Boot",REJECTED,2026-01-06
+597,Nour El Amrani,nour.amrani@example.com,2,"React,Spring Boot,Docker,Next.js",REJECTED,2026-01-22
+598,Anas El Amrani,anas.amrani@example.com,1,"Docker,TypeScript,React,Kafka",REJECTED,2026-01-12
+599,Mehdi Haddad,mehdi.haddad@example.com,5,"TypeScript,PostgreSQL,Hadoop",PENDING,2026-01-26
+600,Mehdi Bouaouda,mehdi.bouaouda@example.com,5,"Next.js,Apache Spark,Spring Boot",REJECTED,2026-01-10

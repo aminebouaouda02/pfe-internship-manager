@@ -8,18 +8,43 @@ Input: CSV with columns
 where `skills` is a quoted comma-separated string, e.g. "Java,Spring Boot,SQL".
 
 Usage:
-    spark-submit skills_stats.py [path_to_csv]
-    python skills_stats.py [path_to_csv]
+    spark-submit skills_stats.py [path_to_csv] [path_to_output_json]
+    python skills_stats.py [path_to_csv] [path_to_output_json]
+
+If an output path is given, the result is also written there as JSON
+(the file the backend analytics endpoint reads), for example:
+
+    python skills_stats.py ../data/applications_large.csv \
+        ../output/applications_per_skill.json
 """
 
+import json
+import os
 import sys
 
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import col, explode, split, trim
 
 
+def write_result_json(stats, output_path: str) -> None:
+    """Write the per-skill counts as JSON, plus the overall total."""
+    rows = [row.asDict() for row in stats.collect()]
+    payload = {
+        "metric": "applications_per_skill",
+        "rows": rows,
+        # One application lists several skills, so this is skill mentions,
+        # not the number of applications.
+        "total_skill_mentions": sum(r["count"] for r in rows),
+    }
+    os.makedirs(os.path.dirname(output_path) or ".", exist_ok=True)
+    with open(output_path, "w", encoding="utf-8") as handle:
+        json.dump(payload, handle, indent=2)
+    print(f"Wrote result JSON to: {output_path}")
+
+
 def main() -> None:
     input_path = sys.argv[1] if len(sys.argv) > 1 else "data/sample_applications.csv"
+    output_path = sys.argv[2] if len(sys.argv) > 2 else None
 
     spark = (
         SparkSession.builder
@@ -55,6 +80,9 @@ def main() -> None:
 
     print("Applications per skill:")
     stats.show(truncate=False)
+
+    if output_path:
+        write_result_json(stats, output_path)
 
     spark.stop()
 
