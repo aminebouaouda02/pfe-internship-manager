@@ -39,10 +39,23 @@ interface Stats {
   accepted: number;
 }
 
+interface SkillRow {
+  skill: string;
+  count: number;
+}
+
+interface SkillsAnalytics {
+  metric: string;
+  rows: SkillRow[];
+  total_skill_mentions: number;
+}
+
 export default function DashboardPage() {
   const router = useRouter();
   const [stats, setStats] = useState<Stats | null>(null);
   const [statsError, setStatsError] = useState("");
+  const [analytics, setAnalytics] = useState<SkillsAnalytics | null>(null);
+  const [analyticsError, setAnalyticsError] = useState("");
 
   useEffect(() => {
     Promise.all([
@@ -59,6 +72,14 @@ export default function DashboardPage() {
         });
       })
       .catch((err: Error) => setStatsError(err.message));
+  }, []);
+
+  // Spark analytics are loaded separately: if the Spark result has not
+  // been generated yet, the offer/application statistics above still show.
+  useEffect(() => {
+    apiGet<SkillsAnalytics>("/api/analytics/skills")
+      .then(setAnalytics)
+      .catch((err: Error) => setAnalyticsError(err.message));
   }, []);
 
   function handleLogout() {
@@ -142,6 +163,61 @@ export default function DashboardPage() {
           </div>
         ))}
       </div>
+
+
+      <section className="mt-10 rounded-2xl border border-slate-200 bg-white p-6 shadow-card">
+        <h2 className="text-xl font-bold text-slate-900">
+          Applications per skill
+        </h2>
+        <p className="mt-1 text-sm text-slate-500">
+          Spark analytics from <code>/api/analytics/skills</code>
+          {analytics
+            ? ` — ${analytics.total_skill_mentions} skill mentions in the sample.`
+            : ""}
+        </p>
+        {analyticsError ? (
+          <p className="mt-4 rounded-lg border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-800">
+            Analytics chart not available yet ({analyticsError}). Run the
+            Spark job first — see <code>big-data/README.md</code> — and the
+            chart appears here without any other change.
+          </p>
+        ) : !analytics ? (
+          <div className="mt-4 space-y-3" aria-label="Loading analytics chart">
+            {[1, 2, 3, 4].map((n) => (
+              <div key={n} className="h-8 animate-pulse rounded bg-slate-100" />
+            ))}
+          </div>
+        ) : (
+          <ul className="mt-4 space-y-3">
+            {analytics.rows.map((row) => {
+              const max = Math.max(...analytics.rows.map((r) => r.count), 1);
+              const width = (row.count / max) * 100;
+              return (
+                <li key={row.skill}>
+                  <div className="flex flex-wrap items-baseline justify-between gap-2 text-sm">
+                    <span className="font-semibold text-slate-900">
+                      {row.skill}
+                    </span>
+                    <span className="text-slate-600">
+                      {row.count} applications
+                    </span>
+                  </div>
+                  <div
+                    className="mt-1 h-3 overflow-hidden rounded-full bg-slate-100"
+                    role="img"
+                    aria-label={`${row.skill}: ${row.count} applications`}
+                  >
+                    <div
+                      className="h-full rounded-full bg-gradient-to-r from-brand-600 to-accent-600"
+                      style={{ width: `${width}%` }}
+                    />
+                  </div>
+                </li>
+              );
+            })}
+          </ul>
+        )}
+      </section>
 
       <h2 className="mt-10 text-xl font-bold text-slate-900">Quick links</h2>
       <div className="mt-4 grid gap-5 md:grid-cols-2">
