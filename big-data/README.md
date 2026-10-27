@@ -54,6 +54,36 @@ python spark/skills_stats.py data/sample_applications.csv
 
 Exact order may vary for equal counts.
 
+## Hadoop / HDFS (Docker Compose `bigdata` profile)
+
+HDFS is now wired up in the project-root `docker-compose.yml`, under a
+`bigdata` profile so the default stack stays light:
+
+- `namenode` — HDFS NameNode, web UI on http://localhost:9870, HDFS on `hdfs://localhost:9000`
+- `datanode` — HDFS DataNode, web UI on http://localhost:9864
+- `spark` — a one-shot Spark job runner (image `apache/spark-py:3.5.1`),
+  with this folder mounted at `/opt/big-data`
+
+```bash
+# From the project root: start PostgreSQL + HDFS
+docker compose --profile bigdata up -d
+
+# Check HDFS is up, and make a folder for application exports
+docker compose --profile bigdata exec namenode hdfs dfs -ls /
+docker compose --profile bigdata exec namenode hdfs dfs -mkdir -p /pfe/applications
+
+# Run the Spark job inside a container
+docker compose --profile bigdata run --rm spark \
+  spark-submit spark/skills_stats.py data/sample_applications.csv
+
+# Stop everything
+docker compose down
+```
+
+What is still local: the Spark job reads CSV files from the local
+filesystem by default (the mounted `big-data/` folder inside the container).
+Pointing its input at an `hdfs://` path is the next step.
+
 ## Working analytics job (600-row sample)
 
 ```bash
@@ -81,4 +111,5 @@ the Spark command above replaces it with a real Spark result.
 - [x] Working job: 600-row generated sample, result JSON, backend endpoint
 - [ ] Read directly from PostgreSQL via JDBC
 - [ ] Add offers-side stats: most requested skills in offers
-- [ ] Run on Hadoop / HDFS in Docker
+- [x] HDFS + Spark services in Docker Compose under the `bigdata` profile
+- [ ] Run the Spark job against HDFS instead of local files
