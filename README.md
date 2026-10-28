@@ -29,7 +29,7 @@ The app running locally, with sample data:
 - **Backend:** Spring Boot 3 (Java 17), Spring Data JPA, Spring Security, PostgreSQL
 - **Frontend:** Next.js 14 (TypeScript, App Router), Tailwind CSS
 - **Big Data:** Apache Spark (PySpark) — batch stats on applications
-- **Infrastructure:** Docker Compose (PostgreSQL for local dev)
+- **Infrastructure:** Docker Compose (PostgreSQL by default; Hadoop HDFS + Spark under the `bigdata` profile)
 
 ## Architecture Overview
 
@@ -61,6 +61,32 @@ Start PostgreSQL:
 ```bash
 docker compose up -d
 ```
+
+Start the Big Data profile (optional — Hadoop HDFS + Spark):
+
+```bash
+docker compose --profile bigdata up -d
+```
+
+This starts PostgreSQL plus the Hadoop NameNode and DataNode. The
+`bigdata` profile is optional on purpose: the default `docker compose up`
+stays light. NameNode web UI: http://localhost:9870 — HDFS address:
+`hdfs://localhost:9000`.
+
+```bash
+# Check HDFS is up
+docker compose --profile bigdata exec namenode hdfs dfs -ls /
+
+# Run the Spark job inside a container (one-shot, not a daemon)
+docker compose --profile bigdata run --rm spark \
+  spark-submit spark/skills_stats.py data/sample_applications.csv
+
+# Stop everything
+docker compose down
+```
+
+The Spark job still reads local CSV files by default; reading its input
+from HDFS is the next step (see `big-data/README.md`).
 
 Run the backend:
 
@@ -105,8 +131,25 @@ spark-submit spark/skills_stats.py data/sample_applications.csv
 - [x] Spark stats: applications per skill on a generated 600-row sample, result JSON served by `GET /api/analytics/skills`
 - [x] Dashboard page with charts
   - [x] `/dashboard` shows an applications-per-skill bar chart from `GET /api/analytics/skills`, with a clear note instead of a chart if the Spark result has not been generated yet
-- [ ] Tests (backend unit tests, frontend lint/build in CI)
+- [x] Hadoop integration — HDFS in Docker Compose under the `bigdata` profile (NameNode + DataNode) and a Spark job-runner service; Spark jobs still read local CSV by default, reading from HDFS is the next step
+- [x] Backend tests (13 JUnit/Mockito tests: `InternshipOfferControllerTest`, `ApplicationControllerTest`, `AuthControllerTest` — create/list/filter, 404/400/409/401 cases, applications starting as PENDING)
+- [ ] Frontend component test setup (deferred: adding Jest + Testing Library needs new dev dependencies and a verified install, so it will be set up with the CI work rather than added unverified)
 - [ ] Deployment guide
+
+## Tests
+
+Backend unit tests live in `backend/src/test/java/...` and use JUnit 5
+with Mockito (repositories mocked, no database needed). Run them with:
+
+```bash
+cd backend
+mvn test
+```
+
+Note: Java/Maven are not installed in the workspace where this work was
+prepared, so the tests were checked for consistency with the controllers
+(signatures, status codes, DTO fields) but not executed there — run
+`mvn test` locally or in CI to see them pass.
 
 ## Author
 
