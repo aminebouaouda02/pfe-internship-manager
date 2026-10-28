@@ -132,8 +132,24 @@ spark-submit spark/skills_stats.py data/sample_applications.csv
 - [x] Dashboard page with charts
   - [x] `/dashboard` shows an applications-per-skill bar chart from `GET /api/analytics/skills`, with a clear note instead of a chart if the Spark result has not been generated yet
 - [x] Hadoop integration — HDFS in Docker Compose under the `bigdata` profile (NameNode + DataNode) and a Spark job-runner service; Spark jobs still read local CSV by default, reading from HDFS is the next step
-- [ ] Tests (backend unit tests, frontend lint/build in CI)
+- [x] Backend tests (13 JUnit/Mockito tests: `InternshipOfferControllerTest`, `ApplicationControllerTest`, `AuthControllerTest` — create/list/filter, 404/400/409/401 cases, applications starting as PENDING)
+- [ ] Frontend component test setup (deferred: adding Jest + Testing Library needs new dev dependencies and a verified install, so it will be set up with the CI work rather than added unverified)
 - [ ] Deployment guide
+
+## Tests
+
+Backend unit tests live in `backend/src/test/java/...` and use JUnit 5
+with Mockito (repositories mocked, no database needed). Run them with:
+
+```bash
+cd backend
+mvn test
+```
+
+Note: Java/Maven are not installed in the workspace where this work was
+prepared, so the tests were checked for consistency with the controllers
+(signatures, status codes, DTO fields) but not executed there — run
+`mvn test` locally or in CI to see them pass.
 
 ## Author
 
