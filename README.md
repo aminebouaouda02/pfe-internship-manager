@@ -39,7 +39,7 @@ pfe-internship-manager/
 │   └── src/main/java/com/amine/pfemanager/
 │       ├── model/       # JPA entities: InternshipOffer, Application
 │       ├── repository/  # Spring Data repositories
-│       ├── controller/  # REST controllers (HealthController for Day 1)
+│       ├── controller/  # REST controllers (offers, applications, auth, analytics)
 │       └── config/      # Security configuration
 ├── frontend/    # Next.js 14 app (App Router)
 │   ├── app/     # layout.tsx, page.tsx
@@ -55,6 +55,11 @@ Data flow:
 3. Exported application data (CSV) is processed by the Spark job in `big-data/` to produce stats
 
 ## How to Run (Docker Compose)
+
+From a clean checkout, starting the database, backend and frontend takes
+under 10 minutes (plus `npm install` the first time). No demo data is seeded
+yet — register an account, then create offers and applications through the
+UI or the API below.
 
 Start PostgreSQL:
 
@@ -92,8 +97,7 @@ Run the backend:
 
 ```bash
 cd backend
-./mvnw spring-boot:run
-# or: mvn spring-boot:run
+mvn spring-boot:run
 # Health check: http://localhost:8080/api/health
 ```
 
@@ -112,6 +116,57 @@ Run the Spark stats job (requires Spark installed locally):
 cd big-data
 spark-submit spark/skills_stats.py data/sample_applications.csv
 ```
+
+## API Reference
+
+Base URL when the backend runs locally: `http://localhost:8080`.
+Interactive docs (Swagger UI): `http://localhost:8080/swagger-ui.html`,
+raw OpenAPI JSON: `http://localhost:8080/v3/api-docs`.
+All endpoints except health, auth and the docs themselves require an
+`Authorization: Bearer <token>` header, using the token from login.
+
+| Method | Endpoint | Auth | What it does |
+|--------|----------|------|--------------|
+| GET | `/api/health` | No | Backend health check |
+| POST | `/api/auth/register` | No | Create an account, returns a JWT |
+| POST | `/api/auth/login` | No | Log in, returns a JWT |
+| GET | `/api/offers` | Yes | List offers, optional `?location=` filter |
+| GET | `/api/offers/{id}` | Yes | One offer |
+| POST | `/api/offers` | Yes | Create an offer |
+| PUT | `/api/offers/{id}` | Yes | Update an offer |
+| DELETE | `/api/offers/{id}` | Yes | Delete an offer |
+| GET | `/api/applications` | Yes | List applications, optional `?offerId=` filter |
+| GET | `/api/applications/{id}` | Yes | One application |
+| POST | `/api/applications` | Yes | Apply to an offer (starts as PENDING) |
+| PUT | `/api/applications/{id}/status?status=` | Yes | Change an application's status |
+| DELETE | `/api/applications/{id}` | Yes | Delete an application |
+| GET | `/api/analytics/skills` | Yes | Latest Spark result: applications per skill |
+
+Example calls (copy-paste ready, same style as a Postman collection):
+
+```bash
+# 1. Register, then log in and save the token
+curl -X POST http://localhost:8080/api/auth/register \
+  -H "Content-Type: application/json" \
+  -d '{"username":"demo","email":"demo@example.com","password":"demo12345"}'
+
+TOKEN=$(curl -s -X POST http://localhost:8080/api/auth/login \
+  -H "Content-Type: application/json" \
+  -d '{"username":"demo","password":"demo12345"}' \
+  | node -e "let d='';process.stdin.on('data',c=>d+=c).on('end',()=>console.log(JSON.parse(d).token))")
+
+# 2. Create an offer
+curl -X POST http://localhost:8080/api/offers \
+  -H "Authorization: Bearer $TOKEN" -H "Content-Type: application/json" \
+  -d '{"title":"PFE Data Engineering Intern","description":"Build Spark pipelines","company":"Example Corp","supervisorName":"Sara El Amrani","requiredSkills":"Spark, SQL, Python","location":"Casablanca"}'
+
+# 3. List offers and read the analytics result
+curl http://localhost:8080/api/offers -H "Authorization: Bearer $TOKEN"
+curl http://localhost:8080/api/analytics/skills -H "Authorization: Bearer $TOKEN"
+```
+
+Error codes: `400` for invalid input, `401` for a missing or bad token,
+`404` for an unknown id, `409` when registering an existing username.
 
 ## Roadmap
 
@@ -134,6 +189,7 @@ spark-submit spark/skills_stats.py data/sample_applications.csv
 - [x] Hadoop integration — HDFS in Docker Compose under the `bigdata` profile (NameNode + DataNode) and a Spark job-runner service; Spark jobs still read local CSV by default, reading from HDFS is the next step
 - [x] Backend tests (13 JUnit/Mockito tests: `InternshipOfferControllerTest`, `ApplicationControllerTest`, `AuthControllerTest` — create/list/filter, 404/400/409/401 cases, applications starting as PENDING)
 - [ ] Frontend component test setup (deferred: adding Jest + Testing Library needs new dev dependencies and a verified install, so it will be set up with the CI work rather than added unverified)
+- [x] Polish & documentation — README rewritten for the finished features, API reference table with copy-paste examples, OpenAPI/Swagger UI enabled, setup under 10 minutes
 - [ ] Deployment guide
 
 ## Tests
