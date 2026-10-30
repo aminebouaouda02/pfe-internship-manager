@@ -190,7 +190,18 @@ Error codes: `400` for invalid input, `401` for a missing or bad token,
 - [x] Backend tests (13 JUnit/Mockito tests: `InternshipOfferControllerTest`, `ApplicationControllerTest`, `AuthControllerTest` — create/list/filter, 404/400/409/401 cases, applications starting as PENDING)
 - [ ] Frontend component test setup (deferred: adding Jest + Testing Library needs new dev dependencies and a verified install, so it will be set up with the CI work rather than added unverified)
 - [x] Polish & documentation — README rewritten for the finished features, API reference table with copy-paste examples, OpenAPI/Swagger UI enabled, setup under 10 minutes
+- [x] CI — GitHub Actions runs the backend tests and the frontend build on every push to main and every pull request (`.github/workflows/ci.yml`)
 - [ ] Deployment guide
+
+## Continuous integration
+
+`.github/workflows/ci.yml` runs on every push to `main` and on every pull
+request, in two jobs: the backend job sets up Java 17 and runs `mvn -B test`
+in `backend/`; the frontend job sets up Node.js 20, runs `npm ci` and
+`npm run build` in `frontend/`. The backend tests are unit tests with mocked
+repositories, so CI needs no database. A green check on a pull request means
+the code builds and the tests pass; see the Actions tab on GitHub for the run
+history.
 
 ## Tests
 
