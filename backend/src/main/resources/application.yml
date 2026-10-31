@@ -27,6 +27,12 @@ springdoc:
     path: /swagger-ui.html
 
 app:
+  seed:
+    # Demo data: off by default. Start the backend with SEED_ENABLED=true
+    # to create the demo accounts and sample rows (only into empty tables).
+    enabled: ${SEED_ENABLED:false}
+    # Local demo password only — never a real account. Change with DEMO_PASSWORD.
+    demo-password: ${DEMO_PASSWORD:demo12345}
   jwt:
     # Dev default only — set the JWT_SECRET environment variable in production.
     # Must be at least 32 characters (256 bits) for HS256.
