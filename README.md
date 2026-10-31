@@ -57,9 +57,33 @@ Data flow:
 ## How to Run (Docker Compose)
 
 From a clean checkout, starting the database, backend and frontend takes
-under 10 minutes (plus `npm install` the first time). No demo data is seeded
-yet — register an account, then create offers and applications through the
-UI or the API below.
+under 10 minutes (plus `npm install` the first time).
+
+### Demo data and demo flow
+
+To try the app without creating anything by hand, start the backend with
+seeding switched on:
+
+```bash
+cd backend
+SEED_ENABLED=true mvn spring-boot:run
+```
+
+On startup, `DataSeeder` fills only tables that are still empty (so a
+restart never duplicates rows) with:
+
+- demo accounts: student `demo` and supervisor `supervisor`, both with
+  password `demo12345` (local demo only — override it with the
+  `DEMO_PASSWORD` environment variable, and never enable seeding against a
+  shared or production database)
+- 6 internship offers across Casablanca, Rabat and Marrakech
+- 5 applications in PENDING, ACCEPTED and REJECTED states
+
+Then open http://localhost:3000, log in as `demo` / `demo12345`, and the
+offers pages, applications pages and dashboard are already populated.
+Seeding is off by default: without `SEED_ENABLED=true`, register an
+account, then create offers and applications through the UI or the API
+below.
 
 Start PostgreSQL:
 
@@ -191,6 +215,7 @@ Error codes: `400` for invalid input, `401` for a missing or bad token,
 - [ ] Frontend component test setup (deferred: adding Jest + Testing Library needs new dev dependencies and a verified install, so it will be set up with the CI work rather than added unverified)
 - [x] Polish & documentation — README rewritten for the finished features, API reference table with copy-paste examples, OpenAPI/Swagger UI enabled, setup under 10 minutes
 - [x] CI — GitHub Actions runs the backend tests and the frontend build on every push to main and every pull request (`.github/workflows/ci.yml`)
+- [x] Seed data and demo flow — `DataSeeder` (off by default, `SEED_ENABLED=true`) seeds demo student/supervisor accounts, 6 offers and 5 applications into empty tables only; the demo login is documented above
 - [ ] Deployment guide
 
 ## Continuous integration
